@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 // <generado automáticamente>
 //     Este código fue generado por una herramienta.
 //
@@ -22,13 +22,13 @@ namespace Sistema_de_etiquetas.Personas {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control NroDoc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox NroDoc;
         
         /// <summary>
         /// Control Label2.
@@ -40,13 +40,13 @@ namespace Sistema_de_etiquetas.Personas {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control TipoDoc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox TipoDoc;
         
         /// <summary>
         /// Control Label3.
@@ -58,13 +58,13 @@ namespace Sistema_de_etiquetas.Personas {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control TextBox3.
+        /// Control Apellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox Apellido;
         
         /// <summary>
         /// Control Label4.
@@ -76,13 +76,13 @@ namespace Sistema_de_etiquetas.Personas {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// Control TextBox4.
+        /// Control Nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox Nombre;
         
         /// <summary>
         /// Control Label5.
@@ -94,13 +94,13 @@ namespace Sistema_de_etiquetas.Personas {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// Control TextBox5.
+        /// Control Provincia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox Provincia;
         
         /// <summary>
         /// Control Label6.
@@ -112,13 +112,13 @@ namespace Sistema_de_etiquetas.Personas {
         protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// Control TextBox6.
+        /// Control Localidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox Localidad;
         
         /// <summary>
         /// Control Label7.
@@ -130,13 +130,13 @@ namespace Sistema_de_etiquetas.Personas {
         protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// Control TextBox7.
+        /// Control Direccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.TextBox Direccion;
         
         /// <summary>
         /// Control Label8.
@@ -148,13 +148,13 @@ namespace Sistema_de_etiquetas.Personas {
         protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
-        /// Control TextBox8.
+        /// Control Telefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox8;
+        protected global::System.Web.UI.WebControls.TextBox Telefono;
         
         /// <summary>
         /// Control Label9.
@@ -166,13 +166,13 @@ namespace Sistema_de_etiquetas.Personas {
         protected global::System.Web.UI.WebControls.Label Label9;
         
         /// <summary>
-        /// Control TextBox9.
+        /// Control Celular.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox9;
+        protected global::System.Web.UI.WebControls.TextBox Celular;
         
         /// <summary>
         /// Control Label10.
@@ -184,13 +184,13 @@ namespace Sistema_de_etiquetas.Personas {
         protected global::System.Web.UI.WebControls.Label Label10;
         
         /// <summary>
-        /// Control TextBox10.
+        /// Control Email.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox10;
+        protected global::System.Web.UI.WebControls.TextBox Email;
         
         /// <summary>
         /// Control Label11.
@@ -202,13 +202,13 @@ namespace Sistema_de_etiquetas.Personas {
         protected global::System.Web.UI.WebControls.Label Label11;
         
         /// <summary>
-        /// Control TextBox11.
+        /// Control Sexo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox11;
+        protected global::System.Web.UI.WebControls.TextBox Sexo;
         
         /// <summary>
         /// Control Label12.
@@ -220,13 +220,13 @@ namespace Sistema_de_etiquetas.Personas {
         protected global::System.Web.UI.WebControls.Label Label12;
         
         /// <summary>
-        /// Control TextBox12.
+        /// Control EstadoCivil.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox12;
+        protected global::System.Web.UI.WebControls.TextBox EstadoCivil;
         
         /// <summary>
         /// Control Label13.
@@ -238,21 +238,22 @@ namespace Sistema_de_etiquetas.Personas {
         protected global::System.Web.UI.WebControls.Label Label13;
         
         /// <summary>
-        /// Control TextBox13.
+        /// Control Nacionalidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox13;
+        protected global::System.Web.UI.WebControls.TextBox Nacionalidad;
         
         /// <summary>
-        /// Control Button1.
+        /// Control AgregarPRSNA.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button AgregarPRSNA;
     }
 }
+
