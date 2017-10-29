@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 // <generado automáticamente>
 //     Este código fue generado por una herramienta.
 //
@@ -13,12 +13,13 @@ namespace Sistema_de_etiquetas.Personas {
     public partial class VerDatosPersona {
         
         /// <summary>
-        /// Control GridView1.
+        /// Control grdVerPersonas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView grdVerPersonas;
     }
 }
+
