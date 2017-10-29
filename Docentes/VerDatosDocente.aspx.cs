@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +11,11 @@ namespace Sistema_de_etiquetas.Docentes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                Conexion con = new Conexion();
+                con.MostrarDatosDocentes(grdVerDocentes);
+            }
         }
     }
 }
