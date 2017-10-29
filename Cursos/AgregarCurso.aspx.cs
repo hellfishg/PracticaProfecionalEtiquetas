@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +11,17 @@ namespace Sistema_de_etiquetas.Cursos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                Conexion cn = new Conexion();
+                cn.CargarDDLturnos(ddlTurnos);
+            }
+        }
+
+        protected void AgregarCur_Click(object sender, EventArgs e)
+        {
+            Conexion cn = new Conexion();
+            cn.AgregarCurso(CodCarrera.Text, CodMateria.Text, Anio.Text, Cursada.Text, ddlTurnos.SelectedItem.Text, Convert.ToInt32(IdDocente.Text.ToString()), Convert.ToInt32(IdDepartamento.Text.ToString()), CodCurso.Text);}
 
         }
     }
-}
