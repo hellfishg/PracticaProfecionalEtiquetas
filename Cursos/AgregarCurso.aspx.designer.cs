@@ -1,4 +1,4 @@
-﻿//------------------------------------------------------------------------------
+//------------------------------------------------------------------------------
 // <generado automáticamente>
 //     Este código fue generado por una herramienta.
 //
@@ -22,13 +22,13 @@ namespace Sistema_de_etiquetas.Cursos {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control CodCarrera.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox CodCarrera;
         
         /// <summary>
         /// Control Label2.
@@ -40,13 +40,13 @@ namespace Sistema_de_etiquetas.Cursos {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control TextBox2.
+        /// Control CodMateria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox CodMateria;
         
         /// <summary>
         /// Control Label3.
@@ -58,13 +58,13 @@ namespace Sistema_de_etiquetas.Cursos {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control TextBox3.
+        /// Control Anio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox Anio;
         
         /// <summary>
         /// Control Label4.
@@ -76,13 +76,13 @@ namespace Sistema_de_etiquetas.Cursos {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// Control TextBox4.
+        /// Control Cursada.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox Cursada;
         
         /// <summary>
         /// Control Label5.
@@ -94,13 +94,13 @@ namespace Sistema_de_etiquetas.Cursos {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// Control DropDownList1.
+        /// Control ddlTurnos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTurnos;
         
         /// <summary>
         /// Control Label6.
@@ -112,13 +112,13 @@ namespace Sistema_de_etiquetas.Cursos {
         protected global::System.Web.UI.WebControls.Label Label6;
         
         /// <summary>
-        /// Control TextBox5.
+        /// Control IdDocente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox IdDocente;
         
         /// <summary>
         /// Control Label7.
@@ -130,13 +130,13 @@ namespace Sistema_de_etiquetas.Cursos {
         protected global::System.Web.UI.WebControls.Label Label7;
         
         /// <summary>
-        /// Control TextBox6.
+        /// Control IdDepartamento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox IdDepartamento;
         
         /// <summary>
         /// Control Label8.
@@ -148,21 +148,21 @@ namespace Sistema_de_etiquetas.Cursos {
         protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
-        /// Control TextBox7.
+        /// Control CodCurso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.TextBox CodCurso;
         
         /// <summary>
-        /// Control Button1.
+        /// Control AgregarCur.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button AgregarCur;
     }
 }
