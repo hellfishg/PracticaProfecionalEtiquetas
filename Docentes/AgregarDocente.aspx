@@ -6,13 +6,13 @@
         <tr>
             <td colspan="2">
                 <asp:Label ID="Label1" runat="server" Text="ID Docente:" style="color: #FFFFFF"></asp:Label>
-                <asp:TextBox ID="IdDocente" runat="server" style="color: #FFFFFF"></asp:TextBox>
+                <asp:TextBox ID="IdDocente" runat="server" style="color: #000000"></asp:TextBox>
                 <asp:Label ID="Label2" runat="server" Text="Número de Documento:" style="color: #FFFFFF"></asp:Label>
-                <asp:TextBox ID="NroDoc" runat="server" style="color: #FFFFFF"></asp:TextBox>
+                <asp:TextBox ID="NroDoc" runat="server" style="color: #000000"></asp:TextBox>
                 <asp:Label ID="Label3" runat="server" Text="Tipo de Documento:" style="color: #FFFFFF"></asp:Label>
-                <asp:TextBox ID="TipoDoc" runat="server" style="color: #FFFFFF"></asp:TextBox>
+                <asp:TextBox ID="TipoDoc" runat="server" style="color: #000000"></asp:TextBox>
                 <asp:Label ID="Label4" runat="server" Text="Legajo:" style="color: #FFFFFF"></asp:Label>
-                <asp:TextBox ID="Legajo" runat="server" style="color: #FFFFFF"></asp:TextBox>
+                <asp:TextBox ID="Legajo" runat="server" style="color: #000000"></asp:TextBox>
             </td>
         </tr>
         <tr>

@@ -11,6 +11,15 @@ namespace Sistema_de_etiquetas.Materias
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                Conexion cn = new Conexion();
+                cn.CargarDDLcursadas(ddlCursadas);
+            }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
 
         }
     }

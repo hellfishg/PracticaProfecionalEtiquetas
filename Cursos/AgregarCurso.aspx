@@ -1,6 +1,7 @@
 <%@ Page Title="" Language="C#" MasterPageFile="~/Cursos/MPCursos.master" AutoEventWireup="true" CodeBehind="AgregarCurso.aspx.cs" Inherits="Sistema_de_etiquetas.Cursos.AgregarCurso" %>
 
 <asp:Content ID="Content1" runat="server" contentplaceholderid="contenidoPrincipal">
+
     <h1>Agregar Curso</h1>
     <p>&nbsp;</p>
     <table style="width: 100%">
@@ -11,7 +12,7 @@
         </tr>
         <tr>
             <td>
-                <asp:TextBox ID="CodCarrera" runat="server" style="color: #FFFFFF"></asp:TextBox>
+                <asp:TextBox ID="CodCarrera" runat="server" style="color: #000000"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -21,7 +22,7 @@
         </tr>
         <tr>
             <td>
-                <asp:TextBox ID="CodMateria" runat="server" style="color: #FFFFFF"></asp:TextBox>
+                <asp:TextBox ID="CodMateria" runat="server" style="color: #000000"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -31,7 +32,7 @@
         </tr>
         <tr>
             <td>
-                <asp:TextBox ID="Anio" runat="server" style="color: #FFFFFF"></asp:TextBox>
+                <asp:TextBox ID="Anio" runat="server" style="color: #000000"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -41,7 +42,7 @@
         </tr>
         <tr>
             <td>
-                <asp:TextBox ID="Cursada" runat="server" style="color: #FFFFFF"></asp:TextBox>
+                <asp:TextBox ID="Cursada" runat="server" style="color: #000000"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -51,9 +52,9 @@
         </tr>
         <tr>
             <td>
-                <asp:DropDownList ID="ddlTurnos" runat="server" DataSourceID="SqlDataSource1" DataTextField="Turno" DataValueField="CodHorario" style="color: #FFFFFF">
+                <asp:DropDownList ID="ddlTurnos" runat="server"  style="color: #000000" DataTextField="Curso" DataValueField="CodigoCarrera" Height="19px" Width="196px">
                 </asp:DropDownList>
-                <span style="color: #FFFFFF">&nbsp;Enlazar con tabla Turnos</span></td>
+                <span style="color: #FFFFFF">&nbsp;</span></td>
         </tr>
         <tr>
             <td>
@@ -62,7 +63,7 @@
         </tr>
         <tr>
             <td>
-                <asp:TextBox ID="IdDocente" runat="server" style="color: #FFFFFF"></asp:TextBox>
+                <asp:TextBox ID="IdDocente" runat="server" style="color: #000000"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -72,7 +73,7 @@
         </tr>
         <tr>
             <td>
-                <asp:TextBox ID="IdDepartamento" runat="server" style="color: #FFFFFF"></asp:TextBox>
+                <asp:TextBox ID="IdDepartamento" runat="server" style="color: #000000"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -82,7 +83,7 @@
         </tr>
         <tr>
             <td>
-                <asp:TextBox ID="CodCurso" runat="server" style="color: #FFFFFF"></asp:TextBox>
+                <asp:TextBox ID="CodCurso" runat="server" style="color: #000000"></asp:TextBox>
             </td>
         </tr>
         <tr>

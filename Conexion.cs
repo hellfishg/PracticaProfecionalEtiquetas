@@ -81,6 +81,26 @@ namespace Sistema_de_etiquetas
             Turnos.DataBind();
         }
 
+        public void CargarDDLcursadas(DropDownList Turnos)
+        {
+            string consulta = "select cursada from CURSADAS";
+            SqlConnection cn = new SqlConnection(ruta);
+
+            cn.Open();
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, cn);
+
+            DataSet ds = new DataSet();
+
+            adaptador.Fill(ds, "CURSADAS");
+
+            cn.Close();
+
+            Turnos.DataSource = ds;
+            Turnos.DataTextField = "cursada";
+
+            Turnos.DataBind();
+        }
+
         public void MostrarDatosPersonas(GridView Personas)
         {
             string consulta = "select NroDoc, TipoDoc, Apellido, Nombre, Provincia, Localidad, Direccion, Telefono, Celular, Email, Sexo, EstadoCivil, Nacionalidad from PERSONAS";
