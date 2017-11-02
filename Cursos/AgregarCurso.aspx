@@ -56,7 +56,7 @@
                 <asp:Label ID="Label5" runat="server" Text="Turno:"></asp:Label>
             </td>
             <td>
-                <asp:DropDownList ID="ddlTurnos" runat="server">
+                <asp:DropDownList ID="ddlTurnos" runat="server" DataSourceID="SqlDataSource1" DataTextField="Turno" DataValueField="CodHorario">
                 </asp:DropDownList>
 &nbsp;Enlazar con tabla Turnos</td>
         </tr>

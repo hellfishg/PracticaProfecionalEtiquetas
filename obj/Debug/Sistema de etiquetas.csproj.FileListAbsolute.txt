@@ -16,3 +16,9 @@ C:\Users\Usuario\Desktop\Sistema de etiquetas\bin\Sistema de etiquetas.pdb
 C:\Users\Usuario\Desktop\Sistema de etiquetas\obj\Debug\Sistema de etiquetas.csprojResolveAssemblyReference.cache
 C:\Users\Usuario\Desktop\Sistema de etiquetas\obj\Debug\Sistema de etiquetas.dll
 C:\Users\Usuario\Desktop\Sistema de etiquetas\obj\Debug\Sistema de etiquetas.pdb
+C:\Users\fede\Desktop\Etiquetas\obj\Debug\Sistema de etiquetas.csprojResolveAssemblyReference.cache
+C:\Users\fede\Desktop\Etiquetas\obj\Debug\Sistema de etiquetas.dll
+C:\Users\fede\Desktop\Etiquetas\obj\Debug\Sistema de etiquetas.pdb
+C:\Users\fede\Desktop\Etiquetas\bin\Sistema de etiquetas.dll.config
+C:\Users\fede\Desktop\Etiquetas\bin\Sistema de etiquetas.dll
+C:\Users\fede\Desktop\Etiquetas\bin\Sistema de etiquetas.pdb

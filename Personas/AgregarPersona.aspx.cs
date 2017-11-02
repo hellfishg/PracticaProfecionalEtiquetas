@@ -14,10 +14,17 @@ namespace Sistema_de_etiquetas.Personas
             
         }
 
-        protected void AgregarPRSNA_Click(object sender, EventArgs e)
+        protected void btnAgregarPersona_Click(object sender, EventArgs e)
         {
             Conexion cn = new Conexion();
             cn.AgregarPersona(Convert.ToInt32(NroDoc.Text.ToString()), TipoDoc.Text, Apellido.Text, Nombre.Text, Provincia.Text, Localidad.Text, Direccion.Text, Convert.ToInt32(Telefono.Text.ToString()), Convert.ToInt32(Celular.Text.ToString()), Email.Text, Sexo.Text, EstadoCivil.Text, Nacionalidad.Text);
+
         }
+
+        protected void EstadoCivil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        
+        }
+
     }
 }

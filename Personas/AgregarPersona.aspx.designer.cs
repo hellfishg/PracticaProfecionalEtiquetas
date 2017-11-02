@@ -226,7 +226,7 @@ namespace Sistema_de_etiquetas.Personas {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox EstadoCivil;
+        protected global::System.Web.UI.WebControls.DropDownList EstadoCivil;
         
         /// <summary>
         /// Control Label13.
@@ -247,13 +247,12 @@ namespace Sistema_de_etiquetas.Personas {
         protected global::System.Web.UI.WebControls.TextBox Nacionalidad;
         
         /// <summary>
-        /// Control AgregarPRSNA.
+        /// Control btnAgregarPersona.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AgregarPRSNA;
+        protected global::System.Web.UI.WebControls.Button btnAgregarPersona;
     }
 }
-

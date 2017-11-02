@@ -11,7 +11,8 @@ namespace Sistema_de_etiquetas.Departamentos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Conexion cn = new Conexion();
+            cn.MostrarDatosDepartamentos(gvDepartamentos);
         }
     }
 }

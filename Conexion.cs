@@ -13,7 +13,7 @@ namespace Sistema_de_etiquetas
     {
         /*RUTA PARA LA BASE DE DATOS*/
         //string ruta = "Data Source=localhost\\sqlexpress;Initial Catalog=ETIQUETAS;Integrated Security=True";
-        string ruta = "Data Source=FRANCIS-PC\\SQLDESAROLLO;Initial Catalog=ETIQUETAS;Integrated Security=True";
+        string ruta = "Data Source=FEDE-PC;Initial Catalog=ETIQUETAS;Integrated Security=True";
 ///////////////////////////////////////////////////////////////////Funciones/////////////////////////////////////////////////////////////////////////
         public void MostrarDatosDocentes(GridView Docentes)
         {
@@ -72,7 +72,6 @@ namespace Sistema_de_etiquetas
             
             adaptador.Fill(ds, "TURNOS");
 
-
             cn.Close();
      
             Turnos.DataSource = ds;
@@ -95,8 +94,22 @@ namespace Sistema_de_etiquetas
             Personas.DataBind();
             cn.Close();
         }
-        
-///////////////////////////////////////////////////////PROCEDURES////////////////////////////////////////////////////////////////////////////////////
+
+        public void MostrarDatosDepartamentos(GridView Personas)
+        {
+            string consulta = "select idDepartamento, Descripcion from DEPARTAMENTOS";
+            SqlConnection cn = new SqlConnection(ruta);
+            cn.Open();
+            SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
+
+            DataSet ds = new DataSet();
+            Adaptador.Fill(ds, "DEPARTAMENTOS");
+            Personas.DataSource = ds.Tables[0];
+            Personas.DataBind();
+            cn.Close();
+        }
+
+        ///////////////////////////////////////////////////////PROCEDURES////////////////////////////////////////////////////////////////////////////////////
         private void EjecutarProcedure(string ruta1, string nombreP, SqlCommand comando)
         {
 
@@ -340,6 +353,22 @@ namespace Sistema_de_etiquetas
             ParametrosSuspenderPersona(ref comando, a, b);
             EjecutarProcedure(ruta, "SP_Suspender_Persona", comando);
         }
+
+        ///////////////////////////////////////////////////////////////////////PROCEDURES DEPARTAMENTOS///////////////////////////////////////////////////////
+        public void AgregarDepartamento(string a)
+        {
+            SqlCommand comando = new SqlCommand();
+            SqlParameter parametros = new SqlParameter();
+            parametros = comando.Parameters.Add("@Descripcion", SqlDbType.VarChar, 20);
+            parametros.Value = a;
+            EjecutarProcedure(ruta, "SP_Ingresar_Departamento", comando);
+        }
+
+
+
+
+
+
 
     }
 }

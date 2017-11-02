@@ -2,38 +2,23 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="contenidoPrincipal" runat="server">
 
-    <h2>Agregar Carrera</h2>
+    <h1>Agregar Carrera</h1>
     <p>
         <table style="width: 100%">
             <tr>
-                <td>
+                <td colspan="2">
                     <asp:Label ID="Label1" runat="server" Text="Código de la Carrera:"></asp:Label>
-                </td>
-                <td>
                     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>
                     <asp:Label ID="Label2" runat="server" Text="Nombre de la Carrera:"></asp:Label>
-                </td>
-                <td>
                     <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>
+                <td style="width: 141px">
                     <asp:Button ID="Button1" runat="server" Text="Agregar" />
                 </td>
+                <td>
+                    &nbsp;</td>
             </tr>
         </table>
 &nbsp;</p>
