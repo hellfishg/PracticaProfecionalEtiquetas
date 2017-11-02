@@ -4,34 +4,15 @@
     <table style="width: 100%">
         <tr>
             <td>
-                <asp:Label ID="Label1" runat="server" Text="Código de Departamento:"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="TextBox1" runat="server" Enabled="False"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                <asp:Label ID="Label2" runat="server" Text="Descripción:"></asp:Label>
-            </td>
-            <td>
+                <asp:Label ID="Label1" runat="server" Text="Código de Departamento:" style="color: #FFFFFF"></asp:Label>
+                <br />
+                <asp:TextBox ID="TextBox1" runat="server" Enabled="False" style="color: #FFFFFF" Width="264px"></asp:TextBox>
+                <br />
+                <asp:Label ID="Label2" runat="server" Text="Descripción:" style="color: #FFFFFF"></asp:Label>
                 <asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>
                 <asp:Button ID="Button1" runat="server" Text="Agregar" OnClick="Button1_Click" />
             </td>
         </tr>
-    </table>
+        </table>
 </asp:Content>
 

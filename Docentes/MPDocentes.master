@@ -4,9 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="server">
 
     <ul id="menuContextual">
-        <li> <a href="AdministrarDocentes.aspx">Administrar Docentes</a> </li>
-        <li> <a href="AgregarDocente.aspx">Agregar Docente</a> </li>
-        <li> <a href="VerDatosDocente.aspx">Ver Datos Docente</a> </li>
+        <li> <a class="vertical" href="AdministrarDocentes.aspx">Administrar Docentes</a> </li>
+        <li> <a class="vertical" href="AgregarDocente.aspx">Agregar Docente</a> </li>
+        <li> <a class="vertical" href="VerDatosDocente.aspx">Ver Datos Docente</a> </li>
     </ul>
 
 </asp:Content>

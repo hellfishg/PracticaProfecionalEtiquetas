@@ -4,8 +4,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="server">
 
     <ul id="menuContextual">
-        <li> <a href="BusquedaEtiqueta.aspx">Busqueda Etiqueta</a> </li>
-        <li> <a href="ImprimirEtiquetas.aspx">Imprimir Etiqueta</a> </li>
+        <li> <a class="vertical" href="BusquedaEtiqueta.aspx">Busqueda Etiqueta</a> </li>
+        <li> <a class="vertical" href="ImprimirEtiquetas.aspx">Imprimir Etiqueta</a> </li>
     </ul>
 
 </asp:Content>

@@ -5,22 +5,22 @@
     <table style="width: 100%">
         <tr>
             <td colspan="2">
-                <asp:Label ID="Label1" runat="server" Text="Código de Carrera:"></asp:Label>
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                <asp:Label ID="Label2" runat="server" Text="Código de Materia:"></asp:Label>
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                <asp:Label ID="Label3" runat="server" Text="Nombre de Materia:"></asp:Label>
-                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-                <asp:Label ID="Label4" runat="server" Text="Tipo de Plan:"></asp:Label>
-                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
-                <asp:Label ID="Label5" runat="server" Text="Cursada:"></asp:Label>
-&nbsp;</td>
+                <asp:Label ID="Label1" runat="server" Text="Código de Carrera:" style="color: #FFFFFF"></asp:Label>
+                <asp:TextBox ID="TextBox1" runat="server" style="color: #FFFFFF"></asp:TextBox>
+                <asp:Label ID="Label2" runat="server" Text="Código de Materia:" style="color: #FFFFFF"></asp:Label>
+                <asp:TextBox ID="TextBox2" runat="server" style="color: #FFFFFF"></asp:TextBox>
+                <asp:Label ID="Label3" runat="server" Text="Nombre de Materia:" style="color: #FFFFFF"></asp:Label>
+                <asp:TextBox ID="TextBox3" runat="server" style="color: #FFFFFF"></asp:TextBox>
+                <asp:Label ID="Label4" runat="server" Text="Tipo de Plan:" style="color: #FFFFFF"></asp:Label>
+                <asp:TextBox ID="TextBox4" runat="server" style="color: #FFFFFF"></asp:TextBox>
+                <asp:Label ID="Label5" runat="server" Text="Cursada:" style="color: #FFFFFF"></asp:Label>
+                <span style="color: #FFFFFF">&nbsp;</span></td>
         </tr>
         <tr>
             <td>
-                <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:DropDownList ID="DropDownList1" runat="server" style="color: #FFFFFF">
                 </asp:DropDownList>
-                Conectar con Tabla Cursadas</td>
+                <span style="color: #FFFFFF">Conectar con Tabla Cursadas</span></td>
             <td>&nbsp;</td>
         </tr>
         <tr>
