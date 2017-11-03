@@ -12,6 +12,12 @@ namespace Sistema_de_etiquetas.Departamentos
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (!IsPostBack)
+            {
+                Conexion cn = new Conexion();
+                cn.MostrarDatosDepartamentos(GridView1);
+            }
+
         }
     }
 }

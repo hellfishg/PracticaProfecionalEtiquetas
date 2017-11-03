@@ -12,8 +12,8 @@ namespace Sistema_de_etiquetas
     public class Conexion
     {
         /*RUTA PARA LA BASE DE DATOS*/
-        //string ruta = "Data Source=localhost\\sqlexpress;Initial Catalog=ETIQUETAS;Integrated Security=True";
-        string ruta = "Data Source=FEDE-PC;Initial Catalog=ETIQUETAS;Integrated Security=True";
+        string ruta = "Data Source=localhost\\sqlexpress;Initial Catalog=ETIQUETAS;Integrated Security=True";
+        //string ruta = "Data Source=FEDE-PC;Initial Catalog=ETIQUETAS;Integrated Security=True";
 ///////////////////////////////////////////////////////////////////Funciones/////////////////////////////////////////////////////////////////////////
         public void MostrarDatosDocentes(GridView Docentes)
         {
@@ -26,6 +26,20 @@ namespace Sistema_de_etiquetas
             Adaptador.Fill(ds, "DOCENTES");
             Docentes.DataSource = ds.Tables[0];
             Docentes.DataBind();
+            cn.Close();
+        }
+
+        public void MostrarDatosMaterias(GridView Materias)
+        {
+            string consulta = "select CodigoCarrera, CodigoMateria, Descripcion, TipoPlan, Cursada from Materias where Suspendido = 0";
+            SqlConnection cn = new SqlConnection(ruta);
+            cn.Open();
+            SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
+
+            DataSet ds = new DataSet();
+            Adaptador.Fill(ds, "MATERIAS");
+            Materias.DataSource = ds.Tables[0];
+            Materias.DataBind();
             cn.Close();
         }
 
@@ -117,7 +131,7 @@ namespace Sistema_de_etiquetas
 
         public void MostrarDatosDepartamentos(GridView Personas)
         {
-            string consulta = "select idDepartamento, Descripcion from DEPARTAMENTOS";
+            string consulta = "select idDepartamento, Descripcion from DEPARTAMENTOS where Suspendido = 0";
             SqlConnection cn = new SqlConnection(ruta);
             cn.Open();
             SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
@@ -195,6 +209,28 @@ namespace Sistema_de_etiquetas
             ParametrosSuspenderDocente(ref comando, a);
             EjecutarProcedure(ruta, "SP_Suspender_Docente", comando);
         }
+
+///////////////////////////////////////////////////////////////////////PROCEDURES DEPARTAMENTOS/////////////////////////////////////////////////////////////
+
+        private void ParametrosModificarDepartamento(ref SqlCommand comando, int a, string b)
+        {
+            SqlParameter parametros = new SqlParameter();
+            parametros = comando.Parameters.Add("@IdDepartamento", SqlDbType.Int);
+            parametros.Value = a;
+            parametros = comando.Parameters.Add("@Descripcion", SqlDbType.Char, 50);
+            parametros.Value = b;
+            
+        }
+
+        private void ParametrosSuspenderDepartamento(ref SqlCommand comando, int a)
+        {
+            SqlParameter parametros = new SqlParameter();
+            parametros = comando.Parameters.Add("@IdDepartamento", SqlDbType.Int);
+            parametros.Value = a;
+            
+        }
+
+
 ///////////////////////////////////////////////////////////////////////PROCEDURES CURSOS/////////////////////////////////////////////////////////////
 
         private void ParametrosAgregarCurso(ref SqlCommand comando, string a, string b, string c, string d, string e, int f, int g, string h)
@@ -379,12 +415,24 @@ namespace Sistema_de_etiquetas
         {
             SqlCommand comando = new SqlCommand();
             SqlParameter parametros = new SqlParameter();
-            parametros = comando.Parameters.Add("@Descripcion", SqlDbType.VarChar, 20);
+            parametros = comando.Parameters.Add("@Descripcion", SqlDbType.VarChar, 50);
             parametros.Value = a;
             EjecutarProcedure(ruta, "SP_Ingresar_Departamento", comando);
         }
 
+        public void ModificarDepartamento(int a, string b)
+        {
+            SqlCommand comando = new SqlCommand();
+            ParametrosModificarDepartamento(ref comando, a, b);
+            EjecutarProcedure(ruta, "SP_Actualizar_Departamento", comando);
+        }
 
+        public void EliminarDepartamento(int a)
+        {
+            SqlCommand comando = new SqlCommand();
+            ParametrosSuspenderDepartamento(ref comando, a);
+            EjecutarProcedure(ruta, "SP_Suspender_Departamento", comando);
+        }
 
 
 
