@@ -80,5 +80,10 @@ namespace Sistema_de_etiquetas.Personas
             cn.MostrarDatosPersonas(grdAdministrarPersonas);
         }
 
+        protected void grdAdministrarPersonas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

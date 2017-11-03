@@ -11,7 +11,62 @@ namespace Sistema_de_etiquetas.Carreras
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                Conexion cn = new Conexion();
+                cn.MostrarDatosCarrerA(GridView1);
+            }
+        }
+
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GridView1.EditIndex = e.NewEditIndex;
+            Conexion cn = new Conexion();
+            cn.MostrarDatosCarrerA(GridView1);
+
 
         }
+
+        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            Conexion cn = new Conexion();
+            string cod = ((Label)GridView1.Rows[e.RowIndex].FindControl("label1")).Text;
+            string desc = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox2")).Text;
+            
+
+            cn.ModificarCarrera(cod, desc);
+            GridView1.EditIndex = -1;
+            cn.MostrarDatosCarrerA(GridView1);
+        }
+
+        protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            Conexion cn = new Conexion();
+            GridView1.EditIndex = -1;
+            cn.MostrarDatosCarrerA(GridView1);
+        }
+
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            Conexion cn = new Conexion();
+            string cod = ((Label)GridView1.Rows[e.RowIndex].FindControl("label1")).Text;
+            cn.EliminarCarrera(cod);
+            GridView1.EditIndex = -1;
+            cn.MostrarDatosCarrerA(GridView1);
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

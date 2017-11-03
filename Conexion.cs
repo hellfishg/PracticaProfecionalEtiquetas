@@ -143,6 +143,20 @@ namespace Sistema_de_etiquetas
             cn.Close();
         }
 
+        public void MostrarDatosCarrerA(GridView cARRERA)
+        {
+            string consulta = "select CodigoCarrera, Descripcion from CARRERAS where Suspendido = 0";
+            SqlConnection cn = new SqlConnection(ruta);
+            cn.Open();
+            SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
+
+            DataSet ds = new DataSet();
+            Adaptador.Fill(ds, "CARRERAS");
+            cARRERA.DataSource = ds.Tables[0];
+            cARRERA.DataBind();
+            cn.Close();
+        }
+
         ///////////////////////////////////////////////////////PROCEDURES////////////////////////////////////////////////////////////////////////////////////
         private void EjecutarProcedure(string ruta1, string nombreP, SqlCommand comando)
         {
@@ -433,10 +447,37 @@ namespace Sistema_de_etiquetas
             ParametrosSuspenderDepartamento(ref comando, a);
             EjecutarProcedure(ruta, "SP_Suspender_Departamento", comando);
         }
+        ///////////////////////////////////////////////////////////////////////PROCEDURES PERSONAS///////////////////////////////////////////////////////
 
+        public void AgregarCarrera(string a, string b)
+        {
+            SqlCommand comando = new SqlCommand();
+            SqlParameter parametros = new SqlParameter();
+            parametros = comando.Parameters.Add("@CodigoCarrera", SqlDbType.VarChar, 3);
+            parametros.Value = a;
+            parametros = comando.Parameters.Add("@Descripcion", SqlDbType.VarChar, 50);
+            parametros.Value = b;
+            EjecutarProcedure(ruta, "SP_Ingresar_Carrera", comando);
+        }
+        public void ModificarCarrera(string a, string b)
+        {
+            SqlCommand comando = new SqlCommand();
+            SqlParameter parametros = new SqlParameter();
+            parametros = comando.Parameters.Add("@CodigoCarrera", SqlDbType.VarChar, 3);
+            parametros.Value = a;
+            parametros = comando.Parameters.Add("@Descripcion", SqlDbType.VarChar, 50);
+            parametros.Value = b;
 
-
-
+            EjecutarProcedure(ruta, "SP_Actualizar_Carrera", comando);
+        }
+        public void EliminarCarrera(string a)
+        {
+            SqlCommand comando = new SqlCommand();
+            SqlParameter parametros = new SqlParameter();
+            parametros = comando.Parameters.Add("@CodigoCarrera", SqlDbType.VarChar, 3);
+            parametros.Value = a;
+            EjecutarProcedure(ruta, "SP_Suspender_Carrera", comando);
+        }
 
     }
 }
