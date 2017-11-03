@@ -117,6 +117,67 @@ namespace Sistema_de_etiquetas
             Cursada.DataTextField = "Cursada";
             Cursada.DataBind();
         }
+        public void CargarDDLcursadas(DropDownList Turnos)
+        {
+            string consulta = "select cursada from CURSADAS";
+            SqlConnection cn = new SqlConnection(ruta);
+
+            cn.Open();
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, cn);
+
+            DataSet ds = new DataSet();
+
+            adaptador.Fill(ds, "CURSADAS");
+
+            cn.Close();
+
+            Turnos.DataSource = ds;
+            Turnos.DataTextField = "cursada";
+
+            Turnos.DataBind();
+        }
+
+        //public void MostrarDatosPersonas(GridView Personas)
+        //{
+        //    string consulta = "select NroDoc, TipoDoc, Apellido, Nombre, Provincia, Localidad, Direccion, Telefono, Celular, Email, Sexo, EstadoCivil, Nacionalidad from PERSONAS";
+        //    SqlConnection cn = new SqlConnection(ruta);
+        //    cn.Open();
+        //    SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
+
+        //    DataSet ds = new DataSet();
+        //    Adaptador.Fill(ds, "PERSONAS");
+        //    Personas.DataSource = ds.Tables[0];
+        //    Personas.DataBind();
+        //    cn.Close();
+        //}
+
+        public void MostrarDatosDepartamentos(GridView Personas)
+        {
+            string consulta = "select idDepartamento, Descripcion from DEPARTAMENTOS where Suspendido = 0";
+            SqlConnection cn = new SqlConnection(ruta);
+            cn.Open();
+            SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
+
+            DataSet ds = new DataSet();
+            Adaptador.Fill(ds, "DEPARTAMENTOS");
+            Personas.DataSource = ds.Tables[0];
+            Personas.DataBind();
+            cn.Close();
+        }
+
+        public void MostrarDatosCarrerA(GridView cARRERA)
+        {
+            string consulta = "select CodigoCarrera, Descripcion from CARRERAS where Suspendido = 0";
+            SqlConnection cn = new SqlConnection(ruta);
+            cn.Open();
+            SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
+
+            DataSet ds = new DataSet();
+            Adaptador.Fill(ds, "CARRERAS");
+            cARRERA.DataSource = ds.Tables[0];
+            cARRERA.DataBind();
+            cn.Close();
+        }
         public void CargarDDLIdDocente(DropDownList IdDocente)
         {
             string consulta = "SELECT IdDocente FROM DOCENTES WHERE Suspendido = 'False'";
@@ -505,5 +566,90 @@ namespace Sistema_de_etiquetas
             EjecutarProcedure(ruta, "SP_Suspender_Persona", comando);
         }
 
+       ///////////////////////////////////////CARRERAS ////////////////////////////////
+        public void AgregarCarrera(string a, string b)
+        {
+            SqlCommand comando = new SqlCommand();
+            SqlParameter parametros = new SqlParameter();
+            parametros = comando.Parameters.Add("@CodigoCarrera", SqlDbType.VarChar, 3);
+            parametros.Value = a;
+            parametros = comando.Parameters.Add("@Descripcion", SqlDbType.VarChar, 50);
+            parametros.Value = b;
+            EjecutarProcedure(ruta, "SP_Ingresar_Carrera", comando);
+        }
+        public void ModificarCarrera(string a, string b)
+        {
+            SqlCommand comando = new SqlCommand();
+            SqlParameter parametros = new SqlParameter();
+            parametros = comando.Parameters.Add("@CodigoCarrera", SqlDbType.VarChar, 3);
+            parametros.Value = a;
+            parametros = comando.Parameters.Add("@Descripcion", SqlDbType.VarChar, 50);
+            parametros.Value = b;
+
+            EjecutarProcedure(ruta, "SP_Actualizar_Carrera", comando);
+        }
+        public void EliminarCarrera(string a)
+        {
+            SqlCommand comando = new SqlCommand();
+            SqlParameter parametros = new SqlParameter();
+            parametros = comando.Parameters.Add("@CodigoCarrera", SqlDbType.VarChar, 3);
+            parametros.Value = a;
+            EjecutarProcedure(ruta, "SP_Suspender_Carrera", comando);
+        }
+
+        ///////////////////////////////////DEPARTAMENTOS/////////////////////////////////
+        private void ParametrosModificarDepartamento(ref SqlCommand comando, int a, string b)
+        {
+            SqlParameter parametros = new SqlParameter();
+            parametros = comando.Parameters.Add("@IdDepartamento", SqlDbType.Int);
+            parametros.Value = a;
+            parametros = comando.Parameters.Add("@Descripcion", SqlDbType.Char, 50);
+            parametros.Value = b;
+
+        }
+
+        private void ParametrosSuspenderDepartamento(ref SqlCommand comando, int a)
+        {
+            SqlParameter parametros = new SqlParameter();
+            parametros = comando.Parameters.Add("@IdDepartamento", SqlDbType.Int);
+            parametros.Value = a;
+
+        }
+
+        public void AgregarDepartamento(string a)
+        {
+            SqlCommand comando = new SqlCommand();
+            SqlParameter parametros = new SqlParameter();
+            parametros = comando.Parameters.Add("@Descripcion", SqlDbType.VarChar, 50);
+            parametros.Value = a;
+            EjecutarProcedure(ruta, "SP_Ingresar_Departamento", comando);
+        }
+
+        public void ModificarDepartamento(int a, string b)
+        {
+            SqlCommand comando = new SqlCommand();
+            ParametrosModificarDepartamento(ref comando, a, b);
+            EjecutarProcedure(ruta, "SP_Actualizar_Departamento", comando);
+        }
+
+        public void EliminarDepartamento(int a)
+        {
+            SqlCommand comando = new SqlCommand();
+            ParametrosSuspenderDepartamento(ref comando, a);
+            EjecutarProcedure(ruta, "SP_Suspender_Departamento", comando);
+        }
+        public void MostrarDatosMaterias(GridView Materias)
+        {
+            string consulta = "select CodigoCarrera, CodigoMateria, Descripcion, TipoPlan, Cursada from Materias where Suspendido = 0";
+            SqlConnection cn = new SqlConnection(ruta);
+            cn.Open();
+            SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
+
+            DataSet ds = new DataSet();
+            Adaptador.Fill(ds, "MATERIAS");
+            Materias.DataSource = ds.Tables[0];
+            Materias.DataBind();
+            cn.Close();
+        }
     }
 }

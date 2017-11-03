@@ -22,3 +22,9 @@ C:\Users\BigBoss\Desktop\Repositorio\PracticaProfesionalEtiquetas\bin\Sistema de
 C:\Users\BigBoss\Desktop\Repositorio\PracticaProfesionalEtiquetas\bin\Sistema de etiquetas.pdb
 C:\Users\BigBoss\Desktop\Repositorio\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.pdb
 C:\Users\BigBoss\Desktop\Repositorio\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.csprojResolveAssemblyReference.cache
+C:\Users\BigBoss\Desktop\Rep BCKP\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.csprojResolveAssemblyReference.cache
+C:\Users\BigBoss\Desktop\Rep BCKP\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.dll
+C:\Users\BigBoss\Desktop\Rep BCKP\PracticaProfesionalEtiquetas\bin\Sistema de etiquetas.dll.config
+C:\Users\BigBoss\Desktop\Rep BCKP\PracticaProfesionalEtiquetas\bin\Sistema de etiquetas.dll
+C:\Users\BigBoss\Desktop\Rep BCKP\PracticaProfesionalEtiquetas\bin\Sistema de etiquetas.pdb
+C:\Users\BigBoss\Desktop\Rep BCKP\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.pdb
