@@ -12,8 +12,8 @@ namespace Sistema_de_etiquetas
     public class Conexion
     {
         /*RUTA PARA LA BASE DE DATOS*/
-        //string ruta = "Data Source=localhost\\sqlexpress;Initial Catalog=ETIQUETAS;Integrated Security=True";
-        string ruta = "Data Source=localhost;Initial Catalog=ETIQUETAS;User id=sa;Password=123;Integrated Security=True";
+        string ruta = "Data Source=localhost\\sqlexpress;Initial Catalog=ETIQUETAS;Integrated Security=True";
+        //string ruta = "Data Source=localhost;Initial Catalog=ETIQUETAS;User id=sa;Password=123;Integrated Security=True";
 
 ///////////////////////////////////////////////////////////////////Funciones/////////////////////////////////////////////////////////////////////////
         public void MostrarDatosDocentes(GridView Docentes)
@@ -192,6 +192,22 @@ namespace Sistema_de_etiquetas
 
             IdDocente.DataSource = ds;
             IdDocente.DataTextField = "IdDocente";
+            IdDocente.DataBind();
+        }
+        public void CargarDDLCarrera(DropDownList IdDocente)
+        {
+            string consulta = "SELECT CodigoCarrera FROM CARRERAS WHERE Suspendido = 'False'";
+            SqlConnection cn = new SqlConnection(ruta);
+
+            cn.Open();
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, cn);
+
+            DataSet ds = new DataSet();
+            adaptador.Fill(ds, "CARRERAS");
+            cn.Close();
+
+            IdDocente.DataSource = ds;
+            IdDocente.DataTextField = "CodigoCarrera";
             IdDocente.DataBind();
         }
 
@@ -651,5 +667,73 @@ namespace Sistema_de_etiquetas
             Materias.DataBind();
             cn.Close();
         }
+
+        public void ModificarMateria(string a, string b, string c, string d, string e)
+        {
+            SqlCommand comando = new SqlCommand();
+            ParametrosModificarMateria(ref comando, a, b, c, d, e);
+            EjecutarProcedure(ruta, "SP_Actualizar_Materia", comando);
+        }
+
+        public void EliminarMateria(string a, string b)
+        {
+            SqlCommand comando = new SqlCommand();
+            ParametrosSuspenderMateria(ref comando, a, b);
+            EjecutarProcedure(ruta, "SP_Suspender_Materia", comando);
+        }
+
+        private void ParametrosModificarMateria(ref SqlCommand comando, string a, string b, string c, string d, string e)
+        {
+            SqlParameter parametros = new SqlParameter();
+            parametros = comando.Parameters.Add("@CodigoCarrera", SqlDbType.Char, 3);
+            parametros.Value = a;
+            parametros = comando.Parameters.Add("@CodigoMateria", SqlDbType.Char, 3);
+            parametros.Value = b;
+            parametros = comando.Parameters.Add("@Descripcion", SqlDbType.Char, 50);
+            parametros.Value = c;
+            parametros = comando.Parameters.Add("@TipoPlan", SqlDbType.Char, 50);
+            parametros.Value = d;
+            parametros = comando.Parameters.Add("@Cursada", SqlDbType.Char, 20);
+            parametros.Value = e;
+
+        }
+
+        private void ParametrosSuspenderMateria(ref SqlCommand comando, string a, string b)
+        {
+            SqlParameter parametros = new SqlParameter();
+            parametros = comando.Parameters.Add("@CodigoCarrera", SqlDbType.Char, 3);
+            parametros.Value = a;
+            parametros = comando.Parameters.Add("@CodigoMateria", SqlDbType.Char, 3);
+            parametros.Value = b;
+
+        }
+
+
+
+
+        public void AgregarMateria(string a, string b, string c, string d, string e)
+        {
+            SqlCommand comando = new SqlCommand();
+            ParametrosModificarMateria(ref comando, a, b, c, d, e);
+            EjecutarProcedure(ruta, "SP_Ingresar_Materia", comando);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
