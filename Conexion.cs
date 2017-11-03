@@ -337,6 +337,68 @@ namespace Sistema_de_etiquetas
             cn.Close();
             return false;
         }
+
+        public bool ValidarClaveMateria(string a)
+        {
+            SqlConnection cn = new SqlConnection(ruta);
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "SELECT CodigoMateria, CodigoCarrera FROM MATERIAS";
+            comando.Connection = cn;
+            cn.Open();
+            SqlDataReader dr = comando.ExecuteReader();
+            while (dr.Read())
+            {
+                if (a == dr[0].ToString())
+                {
+                    cn.Close();
+                    return true;
+                }
+            }
+            cn.Close();
+            return false;
+        }
+
+        public bool ValidarClaveMatera(string a)
+        {
+            SqlConnection cn = new SqlConnection(ruta);
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "SELECT CodigoCarrera FROM MATERIAS";
+            comando.Connection = cn;
+            cn.Open();
+            SqlDataReader dr = comando.ExecuteReader();
+            while (dr.Read())
+            {
+                if (a == dr[0].ToString())
+                {
+                    cn.Close();
+                    return true;
+                }
+            }
+            cn.Close();
+            return false;
+        }
+
+        public bool ValidarClaveCarrera(string a)
+        {
+            SqlConnection cn = new SqlConnection(ruta);
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "SELECT CodigoCarrera FROM CARRERAS";
+            comando.Connection = cn;
+            cn.Open();
+            SqlDataReader dr = comando.ExecuteReader();
+            while (dr.Read())
+            {
+                if (a == dr[0].ToString())
+                {
+                    cn.Close();
+                    return true;
+                }
+            }
+            cn.Close();
+            return false;
+        }
+
+
 ///////////////////////////////////////////////////////PROCEDURES////////////////////////////////////////////////////////////////////////////////////
         private void EjecutarProcedure(string ruta1, string nombreP, SqlCommand comando)
         {

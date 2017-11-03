@@ -16,13 +16,35 @@ namespace Sistema_de_etiquetas.Carreras
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            bool aux = true;
             Conexion cn = new Conexion();
-            cn.AgregarCarrera(TextBoxCod.Text, TextBox2.Text);
 
-            TextBoxCod.Text = null;
-            TextBox2.Text = null;
+            if (TextBoxCod.Text.ToString().Trim().Length > 3 || TextBoxCod.Text.ToString().Trim().Length < 1)
+            {
+                Response.Write("<script>window.alert('El codigo debe tener menos de 4 caracteres y mas de 1');</script>");
+                aux = false;
+            }
 
+            if (cn.ValidarClaveCarrera(TextBoxCod.Text.ToString().Trim()) == true)
+            {
+                Response.Write("<script>window.alert('Codigo repetido');</script>");
+                aux = false;
+            }
+
+            if (TextBox2.Text.ToString().Trim() == "")
+            {
+                Response.Write("<script>window.alert('La carrera debe tener un nombre');</script>");
+                aux = false;
+            }
+
+            if (aux == true)
+            {
+                cn.AgregarCarrera(TextBoxCod.Text, TextBox2.Text);
+
+
+                TextBoxCod.Text = null;
+                TextBox2.Text = null;
+            }
         }
     }
 }

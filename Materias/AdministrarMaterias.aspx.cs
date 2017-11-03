@@ -35,7 +35,7 @@ namespace Sistema_de_etiquetas.Materias
             TextBox TipoPlan = (TextBox)GridView1.Rows[e.NewEditIndex].Cells[4].Controls[0];
             TipoPlan.ReadOnly = false;
             TextBox Cursada = (TextBox)GridView1.Rows[e.NewEditIndex].Cells[5].Controls[0];
-            Cursada.ReadOnly = false;
+            Cursada.ReadOnly = true;
         }
 
        
@@ -74,11 +74,17 @@ namespace Sistema_de_etiquetas.Materias
             string TipoPlan = ((TextBox)(fila.Cells[4].Controls[0])).Text;
             string Cursada = ((TextBox)(fila.Cells[5].Controls[0])).Text;
 
+            if (Descripcion.Trim() == "" || TipoPlan.Trim() == "")
+            {
+                Response.Write("<script>window.alert('Rellene todos los campos');</script>");                
+            }
 
+            
+            else{
             cn.ModificarMateria(CodigoCarrera, CodigoMateria, Descripcion, TipoPlan, Cursada);
             GridView1.EditIndex = -1;
             cn.MostrarDatosDepartamentos(GridView1);
-            GridView1.DataBind();
+            GridView1.DataBind();}
         }
     }
 }

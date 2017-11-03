@@ -32,11 +32,18 @@ namespace Sistema_de_etiquetas.Carreras
             Conexion cn = new Conexion();
             string cod = ((Label)GridView1.Rows[e.RowIndex].FindControl("label1")).Text;
             string desc = ((TextBox)GridView1.Rows[e.RowIndex].FindControl("TextBox2")).Text;
-            
 
-            cn.ModificarCarrera(cod, desc);
-            GridView1.EditIndex = -1;
-            cn.MostrarDatosCarrerA(GridView1);
+            if (desc.Trim() == "")
+            {
+                Response.Write("<script>window.alert('La carrera debe tener nombre');</script>");
+                GridView1.EditIndex = -1;
+            }
+            else
+            {
+                cn.ModificarCarrera(cod, desc);
+                GridView1.EditIndex = -1;
+                cn.MostrarDatosCarrerA(GridView1);
+            }
         }
 
         protected void GridView1_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
