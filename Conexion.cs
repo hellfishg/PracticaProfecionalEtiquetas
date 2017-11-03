@@ -12,7 +12,8 @@ namespace Sistema_de_etiquetas
     public class Conexion
     {
         /*RUTA PARA LA BASE DE DATOS*/
-        string ruta = "Data Source=localhost\\sqlexpress;Initial Catalog=ETIQUETAS;Integrated Security=True";
+        string ruta = "Data Source=FEDE-PC;Initial Catalog=ETIQUETAS;Integrated Security=True";
+        //string ruta = "Data Source=localhost\\sqlexpress;Initial Catalog=ETIQUETAS;Integrated Security=True";
         //string ruta = "Data Source=localhost;Initial Catalog=ETIQUETAS;User id=sa;Password=123;Integrated Security=True";
 
 ///////////////////////////////////////////////////////////////////Funciones/////////////////////////////////////////////////////////////////////////
