@@ -4,10 +4,10 @@
     <table style="width: 100%">
         <tr>
             <td>
-                <asp:Label ID="Label1" runat="server" Text="Carrera:"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="Carrera:" style="color: #FFFFFF"></asp:Label>
             </td>
             <td>
-                <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:DropDownList ID="ddlCarrera" runat="server">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -17,10 +17,10 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="Label2" runat="server" Text="Materia:"></asp:Label>
+                <asp:Label ID="Label2" runat="server" Text="Materia:" style="color: #FFFFFF"></asp:Label>
             </td>
             <td>
-                <asp:DropDownList ID="DropDownList2" runat="server">
+                <asp:DropDownList ID="ddlMateria" runat="server">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -30,23 +30,23 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="Label3" runat="server" Text="Turno:"></asp:Label>
+                <asp:Label ID="Label3" runat="server" Text="Turno:" style="color: #FFFFFF"></asp:Label>
             </td>
             <td>
-                <asp:DropDownList ID="DropDownList3" runat="server">
+                <asp:DropDownList ID="ddlTurno" runat="server">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
             <td>&nbsp;</td>
-            <td>Enlazar Todos los DropDownList con la Tabla Cursos</td>
+            <td style="color: #FFFFFF">Enlazar Todos los DropDownList con la Tabla Cursos</td>
         </tr>
         <tr>
             <td>
-                <asp:Label ID="Label4" runat="server" Text="Docente:"></asp:Label>
+                <asp:Label ID="Label4" runat="server" Text="Docente:" style="color: #FFFFFF"></asp:Label>
             </td>
             <td>
-                <asp:DropDownList ID="DropDownList4" runat="server">
+                <asp:DropDownList ID="ddlDocente" runat="server">
                 </asp:DropDownList>
             </td>
         </tr>
@@ -56,10 +56,10 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="Label5" runat="server" Text="Año:"></asp:Label>
+                <asp:Label ID="Label5" runat="server" Text="Año:" style="color: #FFFFFF"></asp:Label>
             </td>
             <td>
-                <asp:DropDownList ID="DropDownList5" runat="server">
+                <asp:DropDownList ID="ddlAño" runat="server">
                 </asp:DropDownList>
             </td>
         </tr>

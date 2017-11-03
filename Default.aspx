@@ -4,19 +4,19 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="server">
 
     <p>
-        <br />
-        <asp:Label ID="Label1" runat="server" Text="Login"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Login" Font-Size="X-Large" ForeColor="White"></asp:Label>
     </p>
     <p>
-        <asp:Label ID="Label2" runat="server" Text="Usuario:"></asp:Label>
-&nbsp;<asp:TextBox ID="TextBox1" runat="server" Width="100px"></asp:TextBox>
+        <asp:Label ID="Label2" runat="server" Text="Usuario:" ForeColor="White"></asp:Label>
+&nbsp;<asp:TextBox ID="TextBox1" runat="server" Width="100%"></asp:TextBox>
     </p>
     <p>
-        <asp:Label ID="Label3" runat="server" Text="Contraseña:"></asp:Label>
-&nbsp;<asp:TextBox ID="TextBox2" runat="server" Width="100px"></asp:TextBox>
+        <asp:Label ID="Label3" runat="server" Text="Contraseña:" ForeColor="White"></asp:Label>
+&nbsp;<asp:TextBox ID="TextBox2" runat="server" Width="100%
+    "></asp:TextBox>
     </p>
     <p style="margin-left: 40px">
-        <asp:Button ID="Button1" runat="server" Text="Acceder" />
+        <asp:Button ID="Button1" runat="server" Text="Acceder" Width="136px" />
     </p>
 
 </asp:Content>

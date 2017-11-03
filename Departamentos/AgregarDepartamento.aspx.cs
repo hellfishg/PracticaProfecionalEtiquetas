@@ -13,5 +13,11 @@ namespace Sistema_de_etiquetas.Departamentos
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Conexion cn = new Conexion();
+            cn.AgregarDepartamento(txtDescripcion.Text);
+        }
     }
 }

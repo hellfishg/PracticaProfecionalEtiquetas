@@ -22,13 +22,13 @@ namespace Sistema_de_etiquetas.Etiquetas {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control DropDownList1.
+        /// Control ddlCarrera.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCarrera;
         
         /// <summary>
         /// Control Label2.
@@ -40,13 +40,13 @@ namespace Sistema_de_etiquetas.Etiquetas {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// Control DropDownList2.
+        /// Control ddlMateria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList ddlMateria;
         
         /// <summary>
         /// Control Label3.
@@ -58,13 +58,13 @@ namespace Sistema_de_etiquetas.Etiquetas {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Control DropDownList3.
+        /// Control ddlTurno.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTurno;
         
         /// <summary>
         /// Control Label4.
@@ -76,13 +76,13 @@ namespace Sistema_de_etiquetas.Etiquetas {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// Control DropDownList4.
+        /// Control ddlDocente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        protected global::System.Web.UI.WebControls.DropDownList ddlDocente;
         
         /// <summary>
         /// Control Label5.
@@ -94,13 +94,13 @@ namespace Sistema_de_etiquetas.Etiquetas {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// Control DropDownList5.
+        /// Control ddlAño.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList5;
+        protected global::System.Web.UI.WebControls.DropDownList ddlAño;
         
         /// <summary>
         /// Control Button1.

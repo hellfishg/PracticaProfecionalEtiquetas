@@ -11,6 +11,27 @@ namespace Sistema_de_etiquetas.Materias
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                Conexion cn = new Conexion();
+                cn.MostrarDatosMaterias(GridView1);
+            }
+        }
+
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            Conexion cn = new Conexion();
+
+            GridView1.EditIndex = e.NewEditIndex;
+
+            cn.MostrarDatosDepartamentos(GridView1);
+
+            TextBox CodigoCarrera = (TextBox)GridView1.Rows[e.NewEditIndex].Cells[1].Controls[0];
+            CodigoCarrera.ReadOnly = true;
+            TextBox CodigoMateria = (TextBox)GridView1.Rows[e.NewEditIndex].Cells[2].Controls[0];
+            CodigoMateria.ReadOnly = true;
+
+
 
         }
     }

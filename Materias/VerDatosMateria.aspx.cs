@@ -11,7 +11,11 @@ namespace Sistema_de_etiquetas.Materias
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                Conexion cn = new Conexion();
+                cn.MostrarDatosMaterias(GridView1);
+            }
         }
     }
 }
