@@ -13,11 +13,12 @@ namespace Sistema_de_etiquetas
     {
         /*RUTA PARA LA BASE DE DATOS*/
         //string ruta = "Data Source=localhost\\sqlexpress;Initial Catalog=ETIQUETAS;Integrated Security=True";
-        string ruta = "Data Source=FRANCIS-PC\\SQLDESAROLLO;Initial Catalog=ETIQUETAS;Integrated Security=True";
+        string ruta = "Data Source=localhost;Initial Catalog=ETIQUETAS;User id=sa;Password=123;Integrated Security=True";
+
 ///////////////////////////////////////////////////////////////////Funciones/////////////////////////////////////////////////////////////////////////
         public void MostrarDatosDocentes(GridView Docentes)
         {
-            string consulta = "select IdDocente, NroDoc, TipoDoc, Legajo from Docentes";
+            string consulta = "select IdDocente, NroDoc, TipoDoc, Legajo from Docentes WHERE Suspendido = 'False'";
             SqlConnection cn = new SqlConnection(ruta);
             cn.Open();
             SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
@@ -38,17 +39,120 @@ namespace Sistema_de_etiquetas
 
             cn.Open();
             SqlDataReader dr = comando.ExecuteReader();
-            while (dr.Read() == true)
+            while (dr.Read())
             {
                 idDocente.Text = dr[0].ToString();
-
+                
+            }
+            if(idDocente.Text == "")
+            {
+                idDocente.Text = "1";
             }
             cn.Close();
         }
 
+        public void CargarDDLNroDoc(DropDownList NroDoc, string Tipo)
+        {
+            string consulta = "SELECT NroDoc FROM PERSONAS WHERE (TipoDoc = '" + Tipo + "') AND (Suspendido = 'False')";
+            SqlConnection cn = new SqlConnection(ruta);
+
+            cn.Open();
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, cn);
+
+            DataSet ds = new DataSet();
+            adaptador.Fill(ds, "PERSONAS");
+            cn.Close();
+
+            NroDoc.DataSource = ds;
+            NroDoc.DataTextField = "NroDoc";
+            NroDoc.DataBind();
+        }
+
+        public void CargarDDLCodCarrera(DropDownList CodCarrera)
+        {
+            string consulta = "SELECT CodigoCarrera FROM CARRERAS WHERE Suspendido = 'False'";
+            SqlConnection cn = new SqlConnection(ruta);
+
+            cn.Open();
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, cn);
+
+            DataSet ds = new DataSet();
+            adaptador.Fill(ds, "CARRERAS");
+            cn.Close();
+
+            CodCarrera.DataSource = ds;
+            CodCarrera.DataTextField = "CodigoCarrera";
+            CodCarrera.DataBind();
+        }
+
+        public void CargarDDLCodMateria(DropDownList CodMateria, string CodCarrera)
+        {
+            string consulta = "SELECT CodigoMateria FROM MATERIAS WHERE (CodigoCarrera = '" + CodCarrera + "') AND (Suspendido = 'False')";
+            SqlConnection cn = new SqlConnection(ruta);
+
+            cn.Open();
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, cn);
+
+            DataSet ds = new DataSet();
+            adaptador.Fill(ds, "MATERIAS");
+            cn.Close();
+
+            CodMateria.DataSource = ds;
+            CodMateria.DataTextField = "CodigoMateria";
+            CodMateria.DataBind();
+        }
+        public void CargarDDLCursada(DropDownList Cursada)
+        {
+            string consulta = "SELECT Cursada FROM CURSADAS WHERE Suspendido = 'False'";
+            SqlConnection cn = new SqlConnection(ruta);
+
+            cn.Open();
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, cn);
+
+            DataSet ds = new DataSet();
+            adaptador.Fill(ds, "CURSADAS");
+            cn.Close();
+
+            Cursada.DataSource = ds;
+            Cursada.DataTextField = "Cursada";
+            Cursada.DataBind();
+        }
+        public void CargarDDLIdDocente(DropDownList IdDocente)
+        {
+            string consulta = "SELECT IdDocente FROM DOCENTES WHERE Suspendido = 'False'";
+            SqlConnection cn = new SqlConnection(ruta);
+
+            cn.Open();
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, cn);
+
+            DataSet ds = new DataSet();
+            adaptador.Fill(ds, "DOCENTES");
+            cn.Close();
+
+            IdDocente.DataSource = ds;
+            IdDocente.DataTextField = "IdDocente";
+            IdDocente.DataBind();
+        }
+
+        public void CargarDDLIdDepartamento(DropDownList IdDepartamento)
+        {
+            string consulta = "SELECT IdDepartamento FROM DEPARTAMENTOS WHERE Suspendido = 'False'";
+            SqlConnection cn = new SqlConnection(ruta);
+
+            cn.Open();
+            SqlDataAdapter adaptador = new SqlDataAdapter(consulta, cn);
+
+            DataSet ds = new DataSet();
+            adaptador.Fill(ds, "DEPARTAMENTOS");
+            cn.Close();
+
+            IdDepartamento.DataSource = ds;
+            IdDepartamento.DataTextField = "IdDepartamento";
+            IdDepartamento.DataBind();
+        }
         public void MostrarDatosCursos(GridView Cursos)
         {
-            string consulta = "select CodigoCarrera, CodigoMateria, Anio, Cursada, Turno, IdDocente, IdDepartamento, Curso from CURSOS";
+            string consulta = "select CodigoCarrera, CodigoMateria, Anio, Cursada, Turno, IdDocente, IdDepartamento, Curso from CURSOS WHERE Suspendido = 'False'";
             SqlConnection cn = new SqlConnection(ruta);
             cn.Open();
             SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
@@ -84,7 +188,7 @@ namespace Sistema_de_etiquetas
 
         public void MostrarDatosPersonas(GridView Personas)
         {
-            string consulta = "select NroDoc, TipoDoc, Apellido, Nombre, Provincia, Localidad, Direccion, Telefono, Celular, Email, Sexo, EstadoCivil, Nacionalidad from PERSONAS";
+            string consulta = "select NroDoc, TipoDoc, Apellido, Nombre, Provincia, Localidad, Direccion, Telefono, Celular, Email, Sexo, EstadoCivil, Nacionalidad from PERSONAS WHERE Suspendido = 'False'";
             SqlConnection cn = new SqlConnection(ruta);
             cn.Open();
             SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
@@ -95,7 +199,67 @@ namespace Sistema_de_etiquetas
             Personas.DataBind();
             cn.Close();
         }
+
+////////////////////////////////////////////////////VALIDAR QUE NO HAYA REGISTROS IGUALES///////////////////////////////////////////////
+        public bool ValidarClavePersonas(string a,string b)
+        {
+            SqlConnection cn = new SqlConnection(ruta);
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "SELECT NroDoc, TipoDoc FROM PERSONAS";
+            comando.Connection = cn;
+            cn.Open();
+            SqlDataReader dr = comando.ExecuteReader();
+            while (dr.Read())
+            {
+                if (a == dr[0].ToString() && b == dr[1].ToString())
+                {
+                    cn.Close();
+                    return true;
+                }
+            }
+            cn.Close();
+            return false;
+        }
         
+        public bool ValidarClaveDocentes(string a, string b, string c)
+        {
+            SqlConnection cn = new SqlConnection(ruta);
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "SELECT NroDoc, TipoDoc, Legajo FROM DOCENTES";
+            comando.Connection = cn;
+            cn.Open();
+            SqlDataReader dr = comando.ExecuteReader();
+            while (dr.Read())
+            {
+                if ((a == dr[0].ToString() && b == dr[1].ToString()) || c == dr[2].ToString())
+                {
+                    cn.Close();
+                    return true;
+                }
+            }
+            cn.Close();
+            return false;
+        }
+
+        public bool ValidarClaveCursos(string a, string b, string c, string d, string e, string f, string g)
+        {
+            SqlConnection cn = new SqlConnection(ruta);
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "SELECT CodigoCarrera, CodigoMateria, Anio, Cursada, Turno, IdDocente, Curso  FROM CURSOS";
+            comando.Connection = cn;
+            cn.Open();
+            SqlDataReader dr = comando.ExecuteReader();
+            while (dr.Read())
+            {
+                if ((a == dr[0].ToString() && b == dr[1].ToString() && c == dr[2].ToString() && d == dr[3].ToString() && e == dr[4].ToString() && f == dr[5].ToString()) || g == dr[6].ToString())
+                {
+                    cn.Close();
+                    return true;
+                }
+            }
+            cn.Close();
+            return false;
+        }
 ///////////////////////////////////////////////////////PROCEDURES////////////////////////////////////////////////////////////////////////////////////
         private void EjecutarProcedure(string ruta1, string nombreP, SqlCommand comando)
         {

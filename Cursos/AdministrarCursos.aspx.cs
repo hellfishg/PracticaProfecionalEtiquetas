@@ -38,6 +38,8 @@ namespace Sistema_de_etiquetas.Cursos
             Turno.ReadOnly = true;
             TextBox IdDocente = (TextBox)grdAdministrarCursos.Rows[e.NewEditIndex].Cells[6].Controls[0];
             IdDocente.ReadOnly = true;
+            TextBox IdDepartamento = (TextBox)grdAdministrarCursos.Rows[e.NewEditIndex].Cells[7].Controls[0];
+            IdDepartamento.ReadOnly = true;
         }
 
 
@@ -79,7 +81,7 @@ namespace Sistema_de_etiquetas.Cursos
             string CodMateria = grdAdministrarCursos.Rows[e.RowIndex].Cells[2].Text;
             string Anio = grdAdministrarCursos.Rows[e.RowIndex].Cells[3].Text;
             string Cursada = grdAdministrarCursos.Rows[e.RowIndex].Cells[4].Text;
-            string Turno = grdAdministrarCursos.Rows[e.RowIndex].Cells[5].Text;
+            string Turno = Server.HtmlDecode(grdAdministrarCursos.Rows[e.RowIndex].Cells[5].Text);
             int IdDocente = Convert.ToInt32(grdAdministrarCursos.Rows[e.RowIndex].Cells[6].Text);
 
             cn.EliminarCurso(CodCarrera, CodMateria, Anio, Cursada, Turno, IdDocente);

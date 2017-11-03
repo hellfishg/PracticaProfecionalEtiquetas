@@ -32,6 +32,10 @@ namespace Sistema_de_etiquetas.Docentes
 
             TextBox IdDocente = (TextBox)grdAdministrarDocentes.Rows[e.NewEditIndex].Cells[1].Controls[0];
             IdDocente.ReadOnly = true;
+            TextBox NroDoc = (TextBox)grdAdministrarDocentes.Rows[e.NewEditIndex].Cells[2].Controls[0];
+            NroDoc.ReadOnly = true;
+            TextBox TipoDoc = (TextBox)grdAdministrarDocentes.Rows[e.NewEditIndex].Cells[3].Controls[0];
+            TipoDoc.ReadOnly = true;
 
         }
 
@@ -69,6 +73,11 @@ namespace Sistema_de_etiquetas.Docentes
             cn.EliminarDocente(id);
             grdAdministrarDocentes.EditIndex = -1;
             cn.MostrarDatosDocentes(grdAdministrarDocentes);
+        }
+
+        protected void grdAdministrarDocentes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
   
 

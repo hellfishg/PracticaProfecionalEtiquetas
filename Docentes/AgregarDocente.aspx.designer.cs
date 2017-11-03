@@ -46,7 +46,16 @@ namespace Sistema_de_etiquetas.Docentes {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NroDoc;
+        protected global::System.Web.UI.WebControls.DropDownList NroDoc;
+        
+        /// <summary>
+        /// Control rvNroDoc.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rvNroDoc;
         
         /// <summary>
         /// Control Label3.
@@ -64,7 +73,7 @@ namespace Sistema_de_etiquetas.Docentes {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TipoDoc;
+        protected global::System.Web.UI.WebControls.DropDownList TipoDoc;
         
         /// <summary>
         /// Control Label4.
@@ -83,6 +92,33 @@ namespace Sistema_de_etiquetas.Docentes {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Legajo;
+        
+        /// <summary>
+        /// Control rfvLegajo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvLegajo;
+        
+        /// <summary>
+        /// Control cvLegajo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvLegajo;
+        
+        /// <summary>
+        /// Control vsSumario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vsSumario;
         
         /// <summary>
         /// Control AgregarDoc.

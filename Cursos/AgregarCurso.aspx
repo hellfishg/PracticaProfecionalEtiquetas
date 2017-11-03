@@ -5,22 +5,12 @@
     <table style="width: 100%">
         <tr>
             <td>
-                <asp:Label ID="Label1" runat="server" Text="Código de Carrera:"></asp:Label>
+                <asp:Label ID="Label1" runat="server" Text="Codigo de Carrera:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="CodCarrera" runat="server"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>
-                <asp:Label ID="Label2" runat="server" Text="Código de Materia:"></asp:Label>
-            </td>
-            <td>
-                <asp:TextBox ID="CodMateria" runat="server"></asp:TextBox>
+                <asp:DropDownList ID="CodCarrera" runat="server" AutoPostBack="True">
+                </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="rfvCodCarrera" runat="server" ControlToValidate="CodCarrera" ErrorMessage="Ingrese Codigo Carrera">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -29,10 +19,26 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="Label3" runat="server" Text="Año:"></asp:Label>
+                <asp:Label ID="Label2" runat="server" Text="Codigo de Materia:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="Anio" runat="server"></asp:TextBox>
+                <asp:DropDownList ID="CodMateria" runat="server">
+                </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="rfvCodMateria" runat="server" ControlToValidate="CodMateria" ErrorMessage="Ingrese Codigo Materia">*</asp:RequiredFieldValidator>
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Label ID="Label3" runat="server" Text="A&ntilde;o:"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="Anio" runat="server" MaxLength="4"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvAnio" runat="server" ControlToValidate="Anio" ErrorMessage="Ingrese Anio">*</asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="cvAnio" runat="server" ControlToValidate="Anio" ErrorMessage="Ingrese anio valido" Operator="GreaterThanEqual" Type="Integer" ValueToCompare="2000">*</asp:CompareValidator>
             </td>
         </tr>
         <tr>
@@ -44,7 +50,9 @@
                 <asp:Label ID="Label4" runat="server" Text="Cursada:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="Cursada" runat="server"></asp:TextBox>
+                <asp:DropDownList ID="Cursada" runat="server">
+                </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="rfvCursada" runat="server" ControlToValidate="Cursada" ErrorMessage="Ingrese Cursada">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -58,7 +66,7 @@
             <td>
                 <asp:DropDownList ID="ddlTurnos" runat="server">
                 </asp:DropDownList>
-&nbsp;Enlazar con tabla Turnos</td>
+                &nbsp;</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
@@ -69,7 +77,9 @@
                 <asp:Label ID="Label6" runat="server" Text="ID Docente:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="IdDocente" runat="server"></asp:TextBox>
+                <asp:DropDownList ID="IdDocente" runat="server">
+                </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="rfvIdDocente" runat="server" ControlToValidate="IdDocente" ErrorMessage="Ingrese ID Docente">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -81,7 +91,9 @@
                 <asp:Label ID="Label7" runat="server" Text="ID Departamento:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="IdDepartamento" runat="server"></asp:TextBox>
+                <asp:DropDownList ID="IdDepartamento" runat="server">
+                </asp:DropDownList>
+                <asp:RequiredFieldValidator ID="rfvIdDepartamento" runat="server" ControlToValidate="IdDepartamento" ErrorMessage="Ingrese ID Departamento">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -90,20 +102,23 @@
         </tr>
         <tr>
             <td>
-                <asp:Label ID="Label8" runat="server" Text="Código de Curso:"></asp:Label>
+                <asp:Label ID="Label8" runat="server" Text="Codigo de Curso:"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="CodCurso" runat="server"></asp:TextBox>
+                <asp:TextBox ID="CodCurso" runat="server" MaxLength="4"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfvCodCurso" runat="server" ControlToValidate="CodCurso" ErrorMessage="Ingrese Codigo de Curso">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
+            <td>
+                <asp:ValidationSummary ID="vsSumario" runat="server" HeaderText="Errores encontrados" ShowMessageBox="True" ShowSummary="False" />
+            </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
             <td>
-                <asp:Button ID="AgregarCur" runat="server" Text="Agregar" OnClick="AgregarCur_Click" PostBackUrl="~/Cursos/VerDatosCurso.aspx"/>
+                <asp:Button ID="AgregarCur" runat="server" Text="Agregar" OnClick="AgregarCur_Click"/>
             </td>
         </tr>
     </table>

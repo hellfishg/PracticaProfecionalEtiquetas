@@ -16,8 +16,18 @@ namespace Sistema_de_etiquetas.Personas
 
         protected void AgregarPRSNA_Click(object sender, EventArgs e)
         {
+            ///pregunta si los controles de validacion no tiran error y tambien si se ingreso la misma clave que hay en BD
             Conexion cn = new Conexion();
-            cn.AgregarPersona(Convert.ToInt32(NroDoc.Text.ToString()), TipoDoc.Text, Apellido.Text, Nombre.Text, Provincia.Text, Localidad.Text, Direccion.Text, Convert.ToInt32(Telefono.Text.ToString()), Convert.ToInt32(Celular.Text.ToString()), Email.Text, Sexo.Text, EstadoCivil.Text, Nacionalidad.Text);
+            if (Page.IsValid && cn.ValidarClavePersonas(NroDoc.Text.ToString(), TipoDoc.SelectedItem.Text) == false)
+            {
+                cn.AgregarPersona(Convert.ToInt32(NroDoc.Text.ToString()), TipoDoc.SelectedItem.Text, Apellido.Text, Nombre.Text, Provincia.Text, Localidad.Text, Direccion.Text, Convert.ToInt32(Telefono.Text.ToString()), Convert.ToInt32(Celular.Text.ToString()), Email.Text, Sexo.SelectedItem.Value, EstadoCivil.SelectedItem.Text, Nacionalidad.Text);
+                Response.Redirect("VerDatosPersona.aspx");
+            }
+            else
+            {
+                Response.Write("<script>window.alert('Numero de documento ya utilizado');</script>");
+            }
+           
         }
     }
 }

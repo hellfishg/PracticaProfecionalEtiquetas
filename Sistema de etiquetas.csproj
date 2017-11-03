@@ -113,6 +113,7 @@
     <Compile Include="Carreras\VerDatosCarrera.aspx.designer.cs">
       <DependentUpon>VerDatosCarrera.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Conexion.cs" />
     <Compile Include="Cursos\AdministrarCursos.aspx.cs">
       <DependentUpon>AdministrarCursos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

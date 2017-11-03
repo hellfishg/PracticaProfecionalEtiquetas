@@ -28,7 +28,16 @@ namespace Sistema_de_etiquetas.Cursos {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CodCarrera;
+        protected global::System.Web.UI.WebControls.DropDownList CodCarrera;
+        
+        /// <summary>
+        /// Control rfvCodCarrera.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCodCarrera;
         
         /// <summary>
         /// Control Label2.
@@ -46,7 +55,16 @@ namespace Sistema_de_etiquetas.Cursos {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CodMateria;
+        protected global::System.Web.UI.WebControls.DropDownList CodMateria;
+        
+        /// <summary>
+        /// Control rfvCodMateria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCodMateria;
         
         /// <summary>
         /// Control Label3.
@@ -67,6 +85,24 @@ namespace Sistema_de_etiquetas.Cursos {
         protected global::System.Web.UI.WebControls.TextBox Anio;
         
         /// <summary>
+        /// Control rfvAnio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAnio;
+        
+        /// <summary>
+        /// Control cvAnio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvAnio;
+        
+        /// <summary>
         /// Control Label4.
         /// </summary>
         /// <remarks>
@@ -82,7 +118,16 @@ namespace Sistema_de_etiquetas.Cursos {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Cursada;
+        protected global::System.Web.UI.WebControls.DropDownList Cursada;
+        
+        /// <summary>
+        /// Control rfvCursada.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCursada;
         
         /// <summary>
         /// Control Label5.
@@ -118,7 +163,16 @@ namespace Sistema_de_etiquetas.Cursos {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox IdDocente;
+        protected global::System.Web.UI.WebControls.DropDownList IdDocente;
+        
+        /// <summary>
+        /// Control rfvIdDocente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvIdDocente;
         
         /// <summary>
         /// Control Label7.
@@ -136,7 +190,16 @@ namespace Sistema_de_etiquetas.Cursos {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox IdDepartamento;
+        protected global::System.Web.UI.WebControls.DropDownList IdDepartamento;
+        
+        /// <summary>
+        /// Control rfvIdDepartamento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvIdDepartamento;
         
         /// <summary>
         /// Control Label8.
@@ -155,6 +218,24 @@ namespace Sistema_de_etiquetas.Cursos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox CodCurso;
+        
+        /// <summary>
+        /// Control rfvCodCurso.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCodCurso;
+        
+        /// <summary>
+        /// Control vsSumario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vsSumario;
         
         /// <summary>
         /// Control AgregarCur.

@@ -5,7 +5,6 @@
     <p>&nbsp;</p>
     <p>
         <asp:GridView ID="grdVerDocentes" runat="server">
-            <EditRowStyle />
         </asp:GridView>
 
     </p>
