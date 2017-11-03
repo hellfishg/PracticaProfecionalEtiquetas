@@ -4,6 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="server">
 
     <ul id="menuContextual">
+                <h3>navegación </h3>
         <li> <a class="vertical" href="AdministrarMaterias.aspx">Administrar Materias</a> </li>
         <li> <a class="vertical" href="AgregarMateria.aspx">Agregar Materia</a> </li>
         <li> <a class="vertical" href="VerDatosMateria.aspx">Ver Datos Materia</a> </li>

@@ -138,6 +138,11 @@ namespace Sistema_de_etiquetas
             Turnos.DataBind();
         }
 
+
+        //ERROR//
+
+
+
         //public void MostrarDatosPersonas(GridView Personas)
         //{
         //    string consulta = "select NroDoc, TipoDoc, Apellido, Nombre, Provincia, Localidad, Direccion, Telefono, Celular, Email, Sexo, EstadoCivil, Nacionalidad from PERSONAS";
@@ -253,7 +258,6 @@ namespace Sistema_de_etiquetas
             DataSet ds = new DataSet();
             
             adaptador.Fill(ds, "TURNOS");
-
 
             cn.Close();
      
@@ -771,31 +775,12 @@ namespace Sistema_de_etiquetas
 
         }
 
-
-
-
         public void AgregarMateria(string a, string b, string c, string d, string e)
         {
             SqlCommand comando = new SqlCommand();
             ParametrosModificarMateria(ref comando, a, b, c, d, e);
             EjecutarProcedure(ruta, "SP_Ingresar_Materia", comando);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }

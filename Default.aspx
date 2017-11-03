@@ -2,10 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="server">
-
-    <p>
-        <asp:Label ID="Label1" runat="server" Text="Login" Font-Size="X-Large" ForeColor="White"></asp:Label>
-    </p>
+        <h3>Ingreso</h3>
     <p>
         <asp:Label ID="Label2" runat="server" Text="Usuario:" ForeColor="White"></asp:Label>
 &nbsp;<asp:TextBox ID="TextBox1" runat="server" Width="100%"></asp:TextBox>
@@ -22,8 +19,6 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="contenidoPrincipal" runat="server">
 
-    <p>
-        <h1>En este sector estaría una breve explicación del trabajo</h1>
-        </p>
-
+        <h1>breve explicación del trabajo</h1>
+        
 </asp:Content>
