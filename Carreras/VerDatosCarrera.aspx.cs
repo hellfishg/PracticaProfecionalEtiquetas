@@ -11,6 +11,15 @@ namespace Sistema_de_etiquetas.Carreras
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                Conexion cn = new Conexion();
+                cn.MostrarDatosCarrerA(GridView1);
+            }
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -26,5 +26,10 @@ namespace Sistema_de_etiquetas.Personas
         
         }
 
+        protected void NroDoc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

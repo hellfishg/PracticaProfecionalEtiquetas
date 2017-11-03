@@ -13,5 +13,16 @@ namespace Sistema_de_etiquetas.Carreras
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+            Conexion cn = new Conexion();
+            cn.AgregarCarrera(TextBoxCod.Text, TextBox2.Text);
+
+            TextBoxCod.Text = null;
+            TextBox2.Text = null;
+
+        }
     }
 }

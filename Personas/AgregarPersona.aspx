@@ -9,7 +9,7 @@
                 <asp:Label ID="Label1" runat="server" Text="Número de Documento:"></asp:Label>
                 <%--   <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="NroDoc" runat="server" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>--%>
                 </span>
-                <asp:TextBox ID="NroDoc" runat="server" style="color: #000000"></asp:TextBox>
+                <asp:TextBox ID="NroDoc" runat="server" style="color: #000000" OnTextChanged="NroDoc_TextChanged"></asp:TextBox>
                 <span style="color: #FFFFFF">
                 <asp:Label ID="Label2" runat="server" Text="Tipo de Documento:"></asp:Label>
                 <%--   <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="TipoDoc" runat="server" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>--%>
