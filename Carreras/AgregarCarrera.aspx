@@ -8,13 +8,16 @@
             <tr>
                 <td colspan="2">
                     <asp:Label ID="Label1" runat="server" Text="Código de la Carrera:"></asp:Label>
-                    <asp:TextBox ID="TextBoxCod" runat="server"></asp:TextBox>
+                    <br />
+                    <asp:TextBox ID="TextBoxCod" runat="server" Width="300px"></asp:TextBox>
+                    <br />
                     <asp:Label ID="Label2" runat="server" Text="Nombre de la Carrera:"></asp:Label>
-                    <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    <br />
+                    <asp:TextBox ID="TextBox2" runat="server" Width="300px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
-                <td style="width: 141px">
+                <td style="width: 141px; text-align: right;">
                     <asp:Button ID="Button1" runat="server" Text="Agregar" OnClick="Button1_Click" />
                 </td>
                 <td>

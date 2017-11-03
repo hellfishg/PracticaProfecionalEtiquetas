@@ -29,5 +29,10 @@ namespace Sistema_de_etiquetas.Personas
             }
            
         }
+
+        protected void Direccion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

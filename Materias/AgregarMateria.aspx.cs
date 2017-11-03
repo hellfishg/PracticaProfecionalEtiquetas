@@ -22,7 +22,7 @@ namespace Sistema_de_etiquetas.Materias
         protected void Button1_Click(object sender, EventArgs e)
         {
             Conexion cn = new Conexion();
-            cn.AgregarMateria(ddlcarreras.SelectedItem.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, ddlCursadas.SelectedItem.Text);
+            cn.AgregarMateria(ddlcarreras.SelectedItem.Text, txtCodigo.Text, txtNombre.Text, txtTipoPlan.Text, ddlCursadas.SelectedItem.Text);
             
         }
     }

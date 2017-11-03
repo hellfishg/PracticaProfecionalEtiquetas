@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoMenuContextual" runat="server">
 
     <ul id="menuContextual">
-        <li><a class="vertical" href="AdministrarDepartamentos.aspx">Administrar Departamentos</a> </li>
+        <li><a class="vertical" href="AdministrarDepartamentos.aspx">Admin Departamentos</a> </li>
         <li><a class="vertical" href="AgregarDepartamento.aspx">Agregar Departamento</a> </li>
         <li><a class="vertical" href="VerDatosDepartamento.aspx">Ver Datos Departamento</a> </li>
     </ul>

@@ -34,3 +34,9 @@ C:\Users\Intel\Desktop\Programacion\jelfi2\bin\Sistema de etiquetas.pdb
 C:\Users\Intel\Desktop\Programacion\jelfi2\obj\Debug\Sistema de etiquetas.csprojResolveAssemblyReference.cache
 C:\Users\Intel\Desktop\Programacion\jelfi2\obj\Debug\Sistema de etiquetas.dll
 C:\Users\Intel\Desktop\Programacion\jelfi2\obj\Debug\Sistema de etiquetas.pdb
+C:\Users\fede\Desktop\Nueva carpeta\bin\Sistema de etiquetas.dll.config
+C:\Users\fede\Desktop\Nueva carpeta\bin\Sistema de etiquetas.dll
+C:\Users\fede\Desktop\Nueva carpeta\bin\Sistema de etiquetas.pdb
+C:\Users\fede\Desktop\Nueva carpeta\obj\Debug\Sistema de etiquetas.csprojResolveAssemblyReference.cache
+C:\Users\fede\Desktop\Nueva carpeta\obj\Debug\Sistema de etiquetas.dll
+C:\Users\fede\Desktop\Nueva carpeta\obj\Debug\Sistema de etiquetas.pdb
