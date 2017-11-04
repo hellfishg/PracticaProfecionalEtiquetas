@@ -14,6 +14,7 @@
                     <asp:Label ID="Label2" runat="server" Text="Nombre de la Carrera:"></asp:Label>
                     <br />
                     <asp:TextBox ID="TextBox2" runat="server" Width="300px"></asp:TextBox>
+                    <br />
                 </td>
             </tr>
             <tr>
