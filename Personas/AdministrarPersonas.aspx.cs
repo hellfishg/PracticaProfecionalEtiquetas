@@ -30,11 +30,7 @@ namespace Sistema_de_etiquetas.Personas
             NroDoc.ReadOnly = true;
             TextBox TipoDoc = (TextBox)grdAdministrarPersonas.Rows[e.NewEditIndex].Cells[2].Controls[0];
             TipoDoc.ReadOnly = true;
-
-
         }
-
-
 
         protected void grdAdministrarPersonas_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
@@ -85,5 +81,9 @@ namespace Sistema_de_etiquetas.Personas
 
         }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

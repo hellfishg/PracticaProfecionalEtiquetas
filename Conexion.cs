@@ -138,24 +138,19 @@ namespace Sistema_de_etiquetas
             Turnos.DataBind();
         }
 
+        public void MostrarDatosPersonas(GridView Personas)
+        {
+            string consulta = "select NroDoc, TipoDoc, Apellido, Nombre, Provincia, Localidad, Direccion, Telefono, Celular, Email, Sexo, EstadoCivil, Nacionalidad from PERSONAS";
+            SqlConnection cn = new SqlConnection(ruta);
+            cn.Open();
+            SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
 
-        //ERROR//
-
-
-
-        //public void MostrarDatosPersonas(GridView Personas)
-        //{
-        //    string consulta = "select NroDoc, TipoDoc, Apellido, Nombre, Provincia, Localidad, Direccion, Telefono, Celular, Email, Sexo, EstadoCivil, Nacionalidad from PERSONAS";
-        //    SqlConnection cn = new SqlConnection(ruta);
-        //    cn.Open();
-        //    SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
-
-        //    DataSet ds = new DataSet();
-        //    Adaptador.Fill(ds, "PERSONAS");
-        //    Personas.DataSource = ds.Tables[0];
-        //    Personas.DataBind();
-        //    cn.Close();
-        //}
+            DataSet ds = new DataSet();
+            Adaptador.Fill(ds, "PERSONAS");
+            Personas.DataSource = ds.Tables[0];
+            Personas.DataBind();
+            cn.Close();
+        }
 
         public void MostrarDatosDepartamentos(GridView Personas)
         {
@@ -268,21 +263,8 @@ namespace Sistema_de_etiquetas
             Turnos.DataBind();
         }
 
-        public void MostrarDatosPersonas(GridView Personas)
-        {
-            string consulta = "select NroDoc, TipoDoc, Apellido, Nombre, Provincia, Localidad, Direccion, Telefono, Celular, Email, Sexo, EstadoCivil, Nacionalidad from PERSONAS WHERE Suspendido = 'False'";
-            SqlConnection cn = new SqlConnection(ruta);
-            cn.Open();
-            SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
 
-            DataSet ds = new DataSet();
-            Adaptador.Fill(ds, "PERSONAS");
-            Personas.DataSource = ds.Tables[0];
-            Personas.DataBind();
-            cn.Close();
-        }
-
-////////////////////////////////////////////////////VALIDAR QUE NO HAYA REGISTROS IGUALES///////////////////////////////////////////////
+        ////////////////////////////////////////////////////VALIDAR QUE NO HAYA REGISTROS IGUALES///////////////////////////////////////////////
         public bool ValidarClavePersonas(string a,string b)
         {
             SqlConnection cn = new SqlConnection(ruta);
@@ -551,10 +533,12 @@ namespace Sistema_de_etiquetas
         public void EliminarCurso(string a, string b, string c, string d, string e, int f)
         {
             SqlCommand comando = new SqlCommand();
+
             ParametrosSuspenderCurso(ref comando, a, b, c, d, e, f);
             EjecutarProcedure(ruta, "SP_Suspender_Curso", comando);
         }
-///////////////////////////////////////////////////////////////////////PROCEDURES PERSONAS///////////////////////////////////////////////////////
+
+        ///////////////////////////////////////////////////////////////////////PROCEDURES PERSONAS///////////////////////////////////////////////////////
         private void ParametrosAgregarPersona(ref SqlCommand comando, int a, string b, string c, string d, string e, string f, string g, int h, int i, string j, string k, string m, string n)
         {
             SqlParameter parametros = new SqlParameter();

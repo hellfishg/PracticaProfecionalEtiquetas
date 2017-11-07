@@ -35,7 +35,7 @@ namespace Sistema_de_etiquetas.Cursos
             }
             else
             {
-                Response.Write("<script>window.alert('Curso ya existe');</script>");
+                Response.Write("<script>window.alert('Curso ya existente');</script>");
             }
 
 
