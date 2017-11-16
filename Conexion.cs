@@ -140,7 +140,7 @@ namespace Sistema_de_etiquetas
 
         public void MostrarDatosPersonas(GridView Personas)
         {
-            string consulta = "select NroDoc, TipoDoc, Apellido, Nombre, Provincia, Localidad, Direccion, Telefono, Celular, Email, Sexo, EstadoCivil, Nacionalidad from PERSONAS";
+            string consulta = "select NroDoc, TipoDoc, Apellido, Nombre, Provincia, Localidad, Direccion, Telefono, Celular, Email, Sexo, EstadoCivil, Nacionalidad from PERSONAS WHERE Suspendido = 'False'";
             SqlConnection cn = new SqlConnection(ruta);
             cn.Open();
             SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);

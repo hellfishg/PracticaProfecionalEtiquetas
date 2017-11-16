@@ -52,3 +52,9 @@ C:\Users\Damian\Documents\UTN\Cuarto Cuatrimestre\Practica profesional\PracticaP
 C:\Users\Damian\Documents\UTN\Cuarto Cuatrimestre\Practica profesional\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.csprojResolveAssemblyReference.cache
 C:\Users\Damian\Documents\UTN\Cuarto Cuatrimestre\Practica profesional\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.dll
 C:\Users\Damian\Documents\UTN\Cuarto Cuatrimestre\Practica profesional\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.pdb
+C:\Users\BigBoss\Desktop\RepNew\bin\Sistema de etiquetas.dll.config
+C:\Users\BigBoss\Desktop\RepNew\bin\Sistema de etiquetas.dll
+C:\Users\BigBoss\Desktop\RepNew\bin\Sistema de etiquetas.pdb
+C:\Users\BigBoss\Desktop\RepNew\obj\Debug\Sistema de etiquetas.csprojResolveAssemblyReference.cache
+C:\Users\BigBoss\Desktop\RepNew\obj\Debug\Sistema de etiquetas.dll
+C:\Users\BigBoss\Desktop\RepNew\obj\Debug\Sistema de etiquetas.pdb
