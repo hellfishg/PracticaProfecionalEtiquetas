@@ -12,9 +12,10 @@ namespace Sistema_de_etiquetas.Docentes
         protected void Page_Load(object sender, EventArgs e)
         {
             Conexion cn = new Conexion();
-            cn.CargarDDLNroDoc(NroDoc, TipoDoc.SelectedItem.Text);
+           
             if (!IsPostBack)
             {
+                cn.CargarDDLNroDoc(NroDoc, TipoDoc.SelectedItem.Text);
                 cn.IdDocenteSiguiente(IdDocente);
             }
             
@@ -33,6 +34,17 @@ namespace Sistema_de_etiquetas.Docentes
             {
                 Response.Write("<script>window.alert('Docente ya existe');</script>");
             }
+        }
+
+        protected void NroDoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+    
+        }
+
+        protected void TipoDoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Conexion cn = new Conexion();
+            cn.CargarDDLNroDoc(NroDoc, TipoDoc.SelectedItem.Text);
         }
     }
 }
