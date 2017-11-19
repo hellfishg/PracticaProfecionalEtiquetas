@@ -46,9 +46,15 @@ C:\Users\fede\Desktop\Nueva carpeta\obj\Debug\Sistema de etiquetas.pdb
 C:\Users\fede\Desktop\Nueva carpeta\bin\Sistema de etiquetas.dll.config
 C:\Users\fede\Desktop\Nueva carpeta\bin\Sistema de etiquetas.dll
 C:\Users\fede\Desktop\Nueva carpeta\bin\Sistema de etiquetas.pdb
-C:\Users\lucas\OneDrive\Documentos 1\GitHub\PracticaProfesionalEtiquetas\bin\Sistema de etiquetas.dll.config
-C:\Users\lucas\OneDrive\Documentos 1\GitHub\PracticaProfesionalEtiquetas\bin\Sistema de etiquetas.dll
-C:\Users\lucas\OneDrive\Documentos 1\GitHub\PracticaProfesionalEtiquetas\bin\Sistema de etiquetas.pdb
-C:\Users\lucas\OneDrive\Documentos 1\GitHub\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.csprojResolveAssemblyReference.cache
-C:\Users\lucas\OneDrive\Documentos 1\GitHub\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.dll
-C:\Users\lucas\OneDrive\Documentos 1\GitHub\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.pdb
+C:\Users\Damian\Documents\UTN\Cuarto Cuatrimestre\Practica profesional\PracticaProfesionalEtiquetas\bin\Sistema de etiquetas.dll.config
+C:\Users\Damian\Documents\UTN\Cuarto Cuatrimestre\Practica profesional\PracticaProfesionalEtiquetas\bin\Sistema de etiquetas.dll
+C:\Users\Damian\Documents\UTN\Cuarto Cuatrimestre\Practica profesional\PracticaProfesionalEtiquetas\bin\Sistema de etiquetas.pdb
+C:\Users\Damian\Documents\UTN\Cuarto Cuatrimestre\Practica profesional\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.csprojResolveAssemblyReference.cache
+C:\Users\Damian\Documents\UTN\Cuarto Cuatrimestre\Practica profesional\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.dll
+C:\Users\Damian\Documents\UTN\Cuarto Cuatrimestre\Practica profesional\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.pdb
+C:\Users\BigBoss\Desktop\RepNew\bin\Sistema de etiquetas.dll.config
+C:\Users\BigBoss\Desktop\RepNew\bin\Sistema de etiquetas.dll
+C:\Users\BigBoss\Desktop\RepNew\bin\Sistema de etiquetas.pdb
+C:\Users\BigBoss\Desktop\RepNew\obj\Debug\Sistema de etiquetas.csprojResolveAssemblyReference.cache
+C:\Users\BigBoss\Desktop\RepNew\obj\Debug\Sistema de etiquetas.dll
+C:\Users\BigBoss\Desktop\RepNew\obj\Debug\Sistema de etiquetas.pdb

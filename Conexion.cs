@@ -12,8 +12,8 @@ namespace Sistema_de_etiquetas
     public class Conexion
     {
         /*RUTA PARA LA BASE DE DATOS*/
+        //string ruta = "Data Source=FEDE-PC;Initial Catalog=ETIQUETAS;Integrated Security=True";
         string ruta = "Data Source=localhost\\sqlexpress;Initial Catalog=ETIQUETAS;Integrated Security=True";
-        //string ruta = "Data Source=localhost\\sqlexpress;Initial Catalog=ETIQUETAS;Integrated Security=True";
         //string ruta = "Data Source=localhost;Initial Catalog=ETIQUETAS;User id=sa;Password=123;Integrated Security=True";
 
 ///////////////////////////////////////////////////////////////////Funciones/////////////////////////////////////////////////////////////////////////
@@ -140,7 +140,7 @@ namespace Sistema_de_etiquetas
 
         public void MostrarDatosPersonas(GridView Personas)
         {
-            string consulta = "select NroDoc, TipoDoc, Apellido, Nombre, Provincia, Localidad, Direccion, Telefono, Celular, Email, Sexo, EstadoCivil, Nacionalidad from PERSONAS";
+            string consulta = "select NroDoc, TipoDoc, Apellido, Nombre, Provincia, Localidad, Direccion, Telefono, Celular, Email, Sexo, EstadoCivil, Nacionalidad from PERSONAS WHERE Suspendido = 'False'";
             SqlConnection cn = new SqlConnection(ruta);
             cn.Open();
             SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
@@ -370,25 +370,6 @@ namespace Sistema_de_etiquetas
             SqlConnection cn = new SqlConnection(ruta);
             SqlCommand comando = new SqlCommand();
             comando.CommandText = "SELECT CodigoCarrera FROM CARRERAS";
-            comando.Connection = cn;
-            cn.Open();
-            SqlDataReader dr = comando.ExecuteReader();
-            while (dr.Read())
-            {
-                if (a == dr[0].ToString())
-                {
-                    cn.Close();
-                    return true;
-                }
-            }
-            cn.Close();
-            return false;
-        }
-        public bool ValidarDepartamento(string a)
-        {
-            SqlConnection cn = new SqlConnection(ruta);
-            SqlCommand comando = new SqlCommand();
-            comando.CommandText = "SELECT Descripcion FROM DEPARTAMENTOS";
             comando.Connection = cn;
             cn.Open();
             SqlDataReader dr = comando.ExecuteReader();
@@ -703,7 +684,7 @@ namespace Sistema_de_etiquetas
             cn.Close();
             return tipo;
         }
-        
+
         ///////////////////////////////////DEPARTAMENTOS/////////////////////////////////
         private void ParametrosModificarDepartamento(ref SqlCommand comando, int a, string b)
         {
