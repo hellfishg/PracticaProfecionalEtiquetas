@@ -11,17 +11,26 @@ namespace Sistema_de_etiquetas.Cursos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Conexion cn = new Conexion();
-            if (!IsPostBack)
+            if ((string)this.Session["TipoUsuario"] == "No" || this.Session["TipoUsuario"] == null || (string)this.Session["TipoUsuario"] == "Lec")
             {
-                cn.CargarDDLCodCarrera(CodCarrera);
-                cn.CargarDDLturnos(ddlTurnos);
-                cn.CargarDDLIdDocente(IdDocente);
-                cn.CargarDDLCursada(Cursada);
-                cn.CargarDDLIdDepartamento(IdDepartamento);
+                Response.Write("<script>window.alert('Usted no tiene permisos para ingresar a esta seccion.');window.location.href ='AdministrarCursos.aspx';</script>");
+                //Response.Redirect("~/Cursos/AdministrarCursos.aspx");
             }
-            if (CodCarrera.SelectedItem != null) 
-            cn.CargarDDLCodMateria(CodMateria, CodCarrera.SelectedItem.Text);
+            else
+            {
+                Conexion cn = new Conexion();
+                if (!IsPostBack)
+                {
+                    cn.CargarDDLCodCarrera(CodCarrera);
+                    cn.CargarDDLturnos(ddlTurnos);
+                    cn.CargarDDLIdDocente(IdDocente);
+                    cn.CargarDDLCursada(Cursada);
+                    cn.CargarDDLIdDepartamento(IdDepartamento);
+                }
+                if (CodCarrera.SelectedItem != null)
+                    cn.CargarDDLCodMateria(CodMateria, CodCarrera.SelectedItem.Text);
+            }
+            
         }
 
         protected void AgregarCur_Click(object sender, EventArgs e)

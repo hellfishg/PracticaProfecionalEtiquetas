@@ -12,7 +12,7 @@ namespace Sistema_de_etiquetas
     public class Conexion
     {
         /*RUTA PARA LA BASE DE DATOS*/
-        string ruta = "Data Source=FEDE-PC;Initial Catalog=ETIQUETAS;Integrated Security=True";
+        string ruta = "Data Source=localhost\\sqlexpress;Initial Catalog=ETIQUETAS;Integrated Security=True";
         //string ruta = "Data Source=localhost\\sqlexpress;Initial Catalog=ETIQUETAS;Integrated Security=True";
         //string ruta = "Data Source=localhost;Initial Catalog=ETIQUETAS;User id=sa;Password=123;Integrated Security=True";
 
@@ -384,7 +384,25 @@ namespace Sistema_de_etiquetas
             cn.Close();
             return false;
         }
-
+        public bool ValidarDepartamento(string a)
+        {
+            SqlConnection cn = new SqlConnection(ruta);
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "SELECT Descripcion FROM DEPARTAMENTOS";
+            comando.Connection = cn;
+            cn.Open();
+            SqlDataReader dr = comando.ExecuteReader();
+            while (dr.Read())
+            {
+                if (a == dr[0].ToString())
+                {
+                    cn.Close();
+                    return true;
+                }
+            }
+            cn.Close();
+            return false;
+        }
 
 ///////////////////////////////////////////////////////PROCEDURES////////////////////////////////////////////////////////////////////////////////////
         private void EjecutarProcedure(string ruta1, string nombreP, SqlCommand comando)
@@ -663,7 +681,29 @@ namespace Sistema_de_etiquetas
             parametros.Value = a;
             EjecutarProcedure(ruta, "SP_Suspender_Carrera", comando);
         }
-
+        ///////////////////////////////////LOGIN/////////////////////////////////////////
+        public string ComprobarUsuario(string a, string b)
+        {
+            string tipo="Error";
+            SqlConnection cn = new SqlConnection(ruta);
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "SELECT Usuario, Contrasenia, TipoUsuario from USSUARIOS";
+            comando.Connection = cn;
+            cn.Open();
+            SqlDataReader dr = comando.ExecuteReader();
+            while (dr.Read())
+            {
+                if (a == dr[0].ToString() && b == dr[1].ToString())
+                {
+                    tipo=dr[2].ToString();
+                    cn.Close();
+                    return tipo;
+                }
+            }
+            cn.Close();
+            return tipo;
+        }
+        
         ///////////////////////////////////DEPARTAMENTOS/////////////////////////////////
         private void ParametrosModificarDepartamento(ref SqlCommand comando, int a, string b)
         {

@@ -11,11 +11,19 @@ namespace Sistema_de_etiquetas.Docentes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Conexion cn = new Conexion();
-            cn.CargarDDLNroDoc(NroDoc, TipoDoc.SelectedItem.Text);
-            if (!IsPostBack)
+            if ((string)this.Session["TipoUsuario"] == "No" || this.Session["TipoUsuario"] == null || (string)this.Session["TipoUsuario"] == "Lec")
             {
-                cn.IdDocenteSiguiente(IdDocente);
+                Response.Write("<script>window.alert('Usted no tiene permisos para ingresar a esta seccion.');window.location.href ='AdministrarDocentes.aspx';</script>");
+                //Response.Redirect("~/Docentes/AdministrarDocentes.aspx");
+            }
+            else
+            {
+                Conexion cn = new Conexion();
+                cn.CargarDDLNroDoc(NroDoc, TipoDoc.SelectedItem.Text);
+                if (!IsPostBack)
+                {
+                    cn.IdDocenteSiguiente(IdDocente);
+                }
             }
             
         }

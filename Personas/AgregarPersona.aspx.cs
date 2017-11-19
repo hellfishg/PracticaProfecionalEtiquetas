@@ -11,7 +11,11 @@ namespace Sistema_de_etiquetas.Personas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if ((string)this.Session["TipoUsuario"] == "No" || this.Session["TipoUsuario"] == null || (string)this.Session["TipoUsuario"] == "Lec")
+            {
+                Response.Write("<script>window.alert('Usted no tiene permisos para ingresar a esta seccion.');window.location.href ='AdministrarPersonas.aspx';</script>");
+                //Response.Redirect("~/Personas/AdministrarPersonas.aspx");
+            }
         }
 
         protected void AgregarPRSNA_Click(object sender, EventArgs e)

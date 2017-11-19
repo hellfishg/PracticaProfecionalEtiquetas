@@ -11,12 +11,21 @@ namespace Sistema_de_etiquetas.Materias
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if ((string)this.Session["TipoUsuario"] == "No" || this.Session["TipoUsuario"] == null || (string)this.Session["TipoUsuario"] == "Lec")
             {
-                Conexion cn = new Conexion();
-                cn.CargarDDLcursadas(ddlCursadas);
-                cn.CargarDDLCarrera(ddlcarreras);
+                Response.Write("<script>window.alert('Usted no tiene permisos para ingresar a esta seccion.');window.location.href ='AdministrarMaterias.aspx';</script>");
+                //Response.Redirect("~/Materias/AdministrarMaterias.aspx");
             }
+            else
+            {
+                if (!IsPostBack)
+                {
+                    Conexion cn = new Conexion();
+                    cn.CargarDDLcursadas(ddlCursadas);
+                    cn.CargarDDLCarrera(ddlcarreras);
+                }
+            }
+            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
