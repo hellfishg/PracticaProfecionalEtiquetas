@@ -385,6 +385,26 @@ namespace Sistema_de_etiquetas
             return false;
         }
 
+        public bool ValidarDepartamento(string a)
+        {
+            SqlConnection cn = new SqlConnection(ruta);
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "SELECT Descripcion FROM DEPARTAMENTOS";
+            comando.Connection = cn;
+            cn.Open();
+            SqlDataReader dr = comando.ExecuteReader();
+            while (dr.Read())
+            {
+                if (a == dr[0].ToString())
+                {
+                    cn.Close();
+                    return true;
+                }
+            }
+            cn.Close();
+            return false;
+        }
+
 ///////////////////////////////////////////////////////PROCEDURES////////////////////////////////////////////////////////////////////////////////////
         private void EjecutarProcedure(string ruta1, string nombreP, SqlCommand comando)
         {
