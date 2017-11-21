@@ -11,12 +11,21 @@ namespace Sistema_de_etiquetas.Materias
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((string)this.Session["TipoUsuario"] == "No" || this.Session["TipoUsuario"] == null || (string)this.Session["TipoUsuario"] == "Lec")
+            {
+                Response.Write("<script>window.alert('Usted no tiene permisos para ingresar a esta seccion.');window.location.href ='AdministrarMaterias.aspx';</script>");
+                //Response.Redirect("~/Materias/AdministrarMaterias.aspx");
+            }
+            else
+            {
             if (!IsPostBack)
             {
                 Conexion cn = new Conexion();
                 cn.CargarDDLcursadas(ddlCursadas);
                 cn.CargarDDLCarrera(ddlcarreras);
             }
+        }
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -29,17 +38,14 @@ namespace Sistema_de_etiquetas.Materias
                 Response.Write("<script>window.alert('El codigo debe ser de al menos 1 caracter y menos de 4');</script>");
                 aux = true;}
 
-            if (txtTipoPlan.Text.ToString().Trim() == "")
-            {
-                Response.Write("<script>window.alert('Ingrese tipo de plan');</script>");
+            if (txtTipoPlan.Text.ToString().Trim() == "") { Response.Write("<script>window.alert('Ingrese tipo de plan');</script>");
             aux = true;}
 
             if (txtNombre.Text.ToString().Trim() == "")
             {   Response.Write("<script>window.alert('Ingrese Nombre de materia');</script>");
                 aux = true;}
 
-            if (cn.ValidarClaveMateria(txtCodigo.Text.ToString().Trim()) == true)
-            {
+            if (cn.ValidarClaveMateria(txtCodigo.Text.ToString().Trim()) == true){
                 Response.Write("<script>window.alert('La clave está repetida');</script>");
                 aux = true;}
 

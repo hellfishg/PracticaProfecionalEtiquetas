@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -73,6 +74,8 @@
     <Content Include="Docentes\VerDatosDocente.aspx" />
     <Content Include="Etiquetas\BusquedaEtiqueta.aspx" />
     <Content Include="Etiquetas\ImprimirEtiquetas.aspx" />
+    <Content Include="Imagenes\edit.png" />
+    <Content Include="Imagenes\Eliminar.png" />
     <Content Include="Imagenes\logotipo.png" />
     <Content Include="Imagenes\publicidades.jpg" />
     <Content Include="Imagenes\redesSociales.jpg" />

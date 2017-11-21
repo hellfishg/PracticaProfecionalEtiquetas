@@ -138,19 +138,19 @@ namespace Sistema_de_etiquetas
             Turnos.DataBind();
         }
 
-        //public void MostrarDatosPersonas(GridView Personas)
-        //{
-        //    string consulta = "select NroDoc, TipoDoc, Apellido, Nombre, Provincia, Localidad, Direccion, Telefono, Celular, Email, Sexo, EstadoCivil, Nacionalidad from PERSONAS";
-        //    SqlConnection cn = new SqlConnection(ruta);
-        //    cn.Open();
-        //    SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
+        public void MostrarDatosPersonas(GridView Personas)
+        {
+            string consulta = "select NroDoc, TipoDoc, Apellido, Nombre, Provincia, Localidad, Direccion, Telefono, Celular, Email, Sexo, EstadoCivil, Nacionalidad from PERSONAS WHERE Suspendido = 'False'";
+            SqlConnection cn = new SqlConnection(ruta);
+            cn.Open();
+            SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
 
-        //    DataSet ds = new DataSet();
-        //    Adaptador.Fill(ds, "PERSONAS");
-        //    Personas.DataSource = ds.Tables[0];
-        //    Personas.DataBind();
-        //    cn.Close();
-        //}
+            DataSet ds = new DataSet();
+            Adaptador.Fill(ds, "PERSONAS");
+            Personas.DataSource = ds.Tables[0];
+            Personas.DataBind();
+            cn.Close();
+        }
 
         public void MostrarDatosDepartamentos(GridView Personas)
         {
@@ -254,7 +254,6 @@ namespace Sistema_de_etiquetas
             
             adaptador.Fill(ds, "TURNOS");
 
-
             cn.Close();
      
             Turnos.DataSource = ds;
@@ -264,21 +263,8 @@ namespace Sistema_de_etiquetas
             Turnos.DataBind();
         }
 
-        public void MostrarDatosPersonas(GridView Personas)
-        {
-            string consulta = "select NroDoc, TipoDoc, Apellido, Nombre, Provincia, Localidad, Direccion, Telefono, Celular, Email, Sexo, EstadoCivil, Nacionalidad from PERSONAS WHERE Suspendido = 'False'";
-            SqlConnection cn = new SqlConnection(ruta);
-            cn.Open();
-            SqlDataAdapter Adaptador = new SqlDataAdapter(consulta, cn);
 
-            DataSet ds = new DataSet();
-            Adaptador.Fill(ds, "PERSONAS");
-            Personas.DataSource = ds.Tables[0];
-            Personas.DataBind();
-            cn.Close();
-        }
-
-////////////////////////////////////////////////////VALIDAR QUE NO HAYA REGISTROS IGUALES///////////////////////////////////////////////
+        ////////////////////////////////////////////////////VALIDAR QUE NO HAYA REGISTROS IGUALES///////////////////////////////////////////////
         public bool ValidarClavePersonas(string a,string b)
         {
             SqlConnection cn = new SqlConnection(ruta);
@@ -399,6 +385,25 @@ namespace Sistema_de_etiquetas
             return false;
         }
 
+        public bool ValidarDepartamento(string a)
+        {
+            SqlConnection cn = new SqlConnection(ruta);
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "SELECT Descripcion FROM DEPARTAMENTOS";
+            comando.Connection = cn;
+            cn.Open();
+            SqlDataReader dr = comando.ExecuteReader();
+            while (dr.Read())
+            {
+                if (a == dr[0].ToString())
+                {
+                    cn.Close();
+                    return true;
+                }
+            }
+            cn.Close();
+            return false;
+        }
 
 ///////////////////////////////////////////////////////PROCEDURES////////////////////////////////////////////////////////////////////////////////////
         private void EjecutarProcedure(string ruta1, string nombreP, SqlCommand comando)
@@ -547,10 +552,12 @@ namespace Sistema_de_etiquetas
         public void EliminarCurso(string a, string b, string c, string d, string e, int f)
         {
             SqlCommand comando = new SqlCommand();
+
             ParametrosSuspenderCurso(ref comando, a, b, c, d, e, f);
             EjecutarProcedure(ruta, "SP_Suspender_Curso", comando);
         }
-///////////////////////////////////////////////////////////////////////PROCEDURES PERSONAS///////////////////////////////////////////////////////
+
+        ///////////////////////////////////////////////////////////////////////PROCEDURES PERSONAS///////////////////////////////////////////////////////
         private void ParametrosAgregarPersona(ref SqlCommand comando, int a, string b, string c, string d, string e, string f, string g, int h, int i, string j, string k, string m, string n)
         {
             SqlParameter parametros = new SqlParameter();
@@ -675,6 +682,28 @@ namespace Sistema_de_etiquetas
             parametros.Value = a;
             EjecutarProcedure(ruta, "SP_Suspender_Carrera", comando);
         }
+        ///////////////////////////////////LOGIN/////////////////////////////////////////
+        public string ComprobarUsuario(string a, string b)
+        {
+            string tipo="Error";
+            SqlConnection cn = new SqlConnection(ruta);
+            SqlCommand comando = new SqlCommand();
+            comando.CommandText = "SELECT Usuario, Contrasenia, TipoUsuario from USSUARIOS";
+            comando.Connection = cn;
+            cn.Open();
+            SqlDataReader dr = comando.ExecuteReader();
+            while (dr.Read())
+            {
+                if (a == dr[0].ToString() && b == dr[1].ToString())
+                {
+                    tipo=dr[2].ToString();
+                    cn.Close();
+                    return tipo;
+                }
+            }
+            cn.Close();
+            return tipo;
+        }
 
         ///////////////////////////////////DEPARTAMENTOS/////////////////////////////////
         private void ParametrosModificarDepartamento(ref SqlCommand comando, int a, string b)
@@ -771,31 +800,12 @@ namespace Sistema_de_etiquetas
 
         }
 
-
-
-
         public void AgregarMateria(string a, string b, string c, string d, string e)
         {
             SqlCommand comando = new SqlCommand();
             ParametrosModificarMateria(ref comando, a, b, c, d, e);
             EjecutarProcedure(ruta, "SP_Ingresar_Materia", comando);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }

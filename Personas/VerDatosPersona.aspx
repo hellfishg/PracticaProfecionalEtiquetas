@@ -1,9 +1,8 @@
 <%@ Page Title="" Language="C#" MasterPageFile="~/Personas/MPPersonas.master" AutoEventWireup="true" CodeBehind="VerDatosPersona.aspx.cs" Inherits="Sistema_de_etiquetas.Personas.VerDatosPersona" %>
 <asp:Content ID="Content1" runat="server" contentplaceholderid="contenidoPrincipal">
     <h1>Ver Datos Personas</h1>
-    <p>
-        <div runat="server" style="overflow-x:auto;width:556px; height:auto">
-        <asp:GridView ID="grdVerPersonas" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" Font-Names="calibri" ForeColor="Black" GridLines="Horizontal" Width="100%">
+        <div runat="server" style="overflow-x:auto;width:100%; height:auto">
+        <asp:GridView ID="grdVerPersonas" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" Font-Names="calibri" ForeColor="Black" GridLines="Horizontal" Width="100%" Font-Size="Small">
             <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
             <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
@@ -14,6 +13,5 @@
             <SortedDescendingHeaderStyle BackColor="#242121" />
         </asp:GridView>
         </div>
-    </p>
 </asp:Content>
 

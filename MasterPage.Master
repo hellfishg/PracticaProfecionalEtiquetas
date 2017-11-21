@@ -10,11 +10,15 @@
     </asp:ContentPlaceHolder>
     <style type="text/css">
         .auto-style1 {
-            width: 293px;
+            width: 714px;
             margin-left: 0;
+            height: 106px;
         }
         .auto-style2 {
             margin-top: 0;
+        }
+        .auto-style3 {
+            color: #666666;
         }
     </style>
 
@@ -22,11 +26,8 @@
 <body>
     <div id="contenedor">
         <form id="form1" runat="server">
-            <div id="cabecera">
-     
-                <div id="logotipo">
-                    <img src="/Imagenes/logotipo.png" alt="logo UTN" class="auto-style1" />
-                </div>
+            <div id="cabecera">    
+                    <img src="/Imagenes/logo-blanco.png" alt="logo UTN" class="auto-style1" />
             </div>
             <div id="navegacion">
                   <div id="barraHorizontal">
@@ -57,6 +58,7 @@
             </div>
              <div id="col_derecha">
                 <div>
+                    <h3>calendario</h3>
                      <div id="Calendario">
                     <asp:Calendar ID="Calendar1" runat="server" alt="Calendario" Width="200px" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" CssClass="auto-style2">
                         <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
@@ -73,9 +75,8 @@
             </div>
         </form>
         <div id="pie">
-            <span>Práctica Supervisada 2C/2017</span>
+            <span class="auto-style3">Práctica Supervisada 2C/2017</span>
         </div>
     </div>
-
 </body>
 </html>

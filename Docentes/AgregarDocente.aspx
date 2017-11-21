@@ -32,14 +32,14 @@
         </tr>
         <tr>
             <td style="text-align: left; width: 329px">
-                <asp:DropDownList ID="TipoDoc" runat="server" AutoPostBack="True" Font-Size="X-Large" Width="300px">
+                <asp:DropDownList ID="TipoDoc" runat="server" AutoPostBack="True" Font-Size="X-Large" Width="300px" OnSelectedIndexChanged="TipoDoc_SelectedIndexChanged">
                     <asp:ListItem Selected="True">DNI</asp:ListItem>
                     <asp:ListItem>Carnet de extranjero</asp:ListItem>
                     <asp:ListItem>Otros</asp:ListItem>
                 </asp:DropDownList>
             </td>
             <td>
-                <asp:DropDownList ID="NroDoc" runat="server" Font-Size="X-Large" Width="300px">
+                <asp:DropDownList ID="NroDoc" runat="server" Font-Size="X-Large" Width="300px" OnSelectedIndexChanged="NroDoc_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
         </tr>

@@ -14,7 +14,7 @@ namespace Sistema_de_etiquetas.Docentes
             if (!IsPostBack)
             {
                 Conexion con = new Conexion();
-                //con.MostrarDatosDocentes(grdVerDocentes);
+                con.MostrarDatosDocentes(grdVerDocentes);
             }
         }
     }
