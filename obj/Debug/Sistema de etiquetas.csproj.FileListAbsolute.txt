@@ -64,3 +64,9 @@ C:\Users\lucas\OneDrive\Documentos 1\GitHub\PracticaProfesionalEtiquetas\bin\Sis
 C:\Users\lucas\OneDrive\Documentos 1\GitHub\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.csprojResolveAssemblyReference.cache
 C:\Users\lucas\OneDrive\Documentos 1\GitHub\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.dll
 C:\Users\lucas\OneDrive\Documentos 1\GitHub\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.pdb
+E:\Repositorios\PracticaProfesionalEtiquetas\bin\Sistema de etiquetas.dll.config
+E:\Repositorios\PracticaProfesionalEtiquetas\bin\Sistema de etiquetas.dll
+E:\Repositorios\PracticaProfesionalEtiquetas\bin\Sistema de etiquetas.pdb
+E:\Repositorios\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.csproj.CoreCompileInputs.cache
+E:\Repositorios\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.dll
+E:\Repositorios\PracticaProfesionalEtiquetas\obj\Debug\Sistema de etiquetas.pdb
