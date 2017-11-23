@@ -20,6 +20,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -88,6 +89,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\clsCapaDeAcceso.cs" />
+    <Compile Include="App_Code\clsCarrera.cs" />
+    <Compile Include="App_Code\clsCurso.cs" />
+    <Compile Include="App_Code\clsDocente.cs" />
+    <Compile Include="App_Code\clsMateria.cs" />
+    <Compile Include="App_Code\clsServiciosEtiqueta.cs" />
+    <Compile Include="App_Code\clsTurno.cs" />
     <Compile Include="Carreras\AdministrarCarreras.aspx.cs">
       <DependentUpon>AdministrarCarreras.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
