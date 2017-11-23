@@ -11,7 +11,11 @@ namespace Sistema_de_etiquetas.Etiquetas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if ((string)this.Session["TipoUsuario"] == "No" || this.Session["TipoUsuario"] == null)
+            {
+                this.Session["ErrorTipoUsuario"] = "Si";
+                Response.Redirect("~/Default.aspx");
+            }
         }
     }
 }

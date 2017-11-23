@@ -1,69 +1,80 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Etiquetas/MPEtiquetas.master" AutoEventWireup="true" CodeBehind="BusquedaEtiqueta.aspx.cs" Inherits="Sistema_de_etiquetas.Etiquetas.BusquedaEtiqueta" %>
-<asp:Content ID="Content1" runat="server" contentplaceholderid="contenidoPrincipal">
+
+<asp:Content ID="Content1" runat="server" ContentPlaceHolderID="contenidoPrincipal">
     <h1>Etiquetas</h1>
     <table style="width: 100%">
         <tr>
-            <td>
-                <asp:Label ID="Label1" runat="server" Text="Carrera:" style="color: #FFFFFF"></asp:Label>
+            <td style="width: 80px">
+                <asp:Label ID="Label1" runat="server" Text="Carrera:"></asp:Label>
             </td>
             <td>
-                <asp:Label ID="Label4" runat="server" Text="Docente:" style="color: #FFFFFF"></asp:Label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <asp:DropDownList ID="ddlCarrera" runat="server" Font-Size="X-Large" Width="300px">
-                </asp:DropDownList>
-            </td>
-            <td>
-                <asp:DropDownList ID="ddlDocente" runat="server" Font-Size="X-Large" Width="300px">
+                <asp:DropDownList ID="ddlCarrera" runat="server" OnSelectedIndexChanged="ddlCarrera_SelectedIndexChanged" AutoPostBack="True" Style="margin-left: 0px">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
-            <td>
-                <asp:Label ID="Label2" runat="server" Text="Materia:" style="color: #FFFFFF"></asp:Label>
+            <td style="height: 23px; width: 80px;"></td>
+            <td style="height: 23px"></td>
+        </tr>
+        <tr>
+            <td style="width: 80px">
+                <asp:Label ID="Label2" runat="server" Text="Materia:"></asp:Label>
             </td>
             <td>
-                <asp:Label ID="Label5" runat="server" Text="Año:" style="color: #FFFFFF"></asp:Label>
+                <asp:DropDownList ID="ddlMaterias" runat="server" OnSelectedIndexChanged="ddlMaterias_SelectedIndexChanged" AutoPostBack="True">
+                </asp:DropDownList>
+                <br />
             </td>
         </tr>
         <tr>
+            <td style="width: 80px">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 80px">
+                <asp:Label ID="Label3" runat="server" Text="Turno:"></asp:Label>
+            </td>
             <td>
-                <asp:DropDownList ID="ddlMateria" runat="server" Font-Size="X-Large" Width="300px">
+                <asp:DropDownList ID="ddlTurnos" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlTurnos_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
+        </tr>
+        <tr>
+            <td style="width: 80px">&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td style="width: 80px">
+                <asp:Label ID="Label4" runat="server" Text="Docente:"></asp:Label>
+            </td>
             <td>
-                <asp:DropDownList ID="ddlAño" runat="server" Font-Size="X-Large" Width="300px">
+                <asp:DropDownList ID="ddlDocentes" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlDocentes_SelectedIndexChanged">
                 </asp:DropDownList>
             </td>
         </tr>
         <tr>
-            <td>
-                <asp:Label ID="Label3" runat="server" Text="Turno:" style="color: #FFFFFF"></asp:Label>
-            </td>
-            <td>
-                &nbsp;</td>
+            <td style="width: 80px">&nbsp;</td>
+            <td>&nbsp;</td>
         </tr>
         <tr>
+            <td style="width: 80px">
+                <asp:Label ID="Label5" runat="server" Text="Año:"></asp:Label>
+            </td>
             <td>
-                <asp:DropDownList ID="ddlTurno" runat="server" Font-Size="X-Large" Width="300px">
+                <asp:DropDownList ID="ddlAnio" runat="server" AutoPostBack="True">
                 </asp:DropDownList>
             </td>
-            <td style="color: #FFFFFF">Enlazar Todos los DropDownList con la Tabla Cursos</td>
         </tr>
         <tr>
-            <td>
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
+            <td style="width: 80px">&nbsp;</td>
+            <td>&nbsp;</td>
         </tr>
         <tr>
+            <td style="width: 80px">&nbsp;</td>
             <td>
                 <asp:Button ID="Button1" runat="server" Text="Aceptar" />
             </td>
-            <td>&nbsp;</td>
         </tr>
-        </table>
+    </table>
 </asp:Content>
 
