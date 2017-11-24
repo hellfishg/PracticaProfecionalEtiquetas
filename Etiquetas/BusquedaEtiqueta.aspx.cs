@@ -46,10 +46,26 @@ namespace Sistema_de_etiquetas.Etiquetas
             clsServiciosEtiqueta servicio = new clsServiciosEtiqueta();
             try
             {
-                ddlMaterias.DataSource = servicio.traerMaterias(idCarrera);
-                ddlMaterias.DataTextField = "Materia";
-                ddlMaterias.DataValueField = "IdMateria";
-                ddlMaterias.DataBind();
+                if (ddlCarrera.SelectedIndex != 0)
+                {
+                    ddlMaterias.Items.Clear();
+                    ddlMaterias.Items.Add(" ");
+                    ddlMaterias.DataSource = servicio.traerMaterias(idCarrera);
+                    ddlMaterias.DataTextField = "Materia";
+                    ddlMaterias.DataValueField = "IdMateria";
+                    ddlMaterias.DataBind();
+
+                    ddlTurnos.Items.Clear();
+                    ddlDocentes.Items.Clear();
+                    ddlAnio.Items.Clear();
+                }
+                else
+                {
+                    ddlMaterias.Items.Clear();
+                    ddlTurnos.Items.Clear();
+                    ddlDocentes.Items.Clear();
+                    ddlAnio.Items.Clear();
+                }
             }
             catch (Exception ex)
             {
@@ -63,10 +79,24 @@ namespace Sistema_de_etiquetas.Etiquetas
 
             try
             {
-                ddlTurnos.DataSource = servicio.cargarTurnos(idCarrera, idMateria);
-                ddlTurnos.DataTextField = "Turno";
-                ddlTurnos.DataValueField = "Turno";
-                ddlTurnos.DataBind();
+                if (ddlMaterias.SelectedIndex != 0)
+                {
+                    ddlTurnos.Items.Clear();
+                    ddlTurnos.Items.Add(" ");
+                    ddlTurnos.DataSource = servicio.cargarTurnos(idCarrera, idMateria);
+                    ddlTurnos.DataTextField = "Turno";
+                    ddlTurnos.DataValueField = "Turno";
+                    ddlTurnos.DataBind();
+
+                    ddlDocentes.Items.Clear();
+                    ddlAnio.Items.Clear();
+                }
+                else
+                {
+                    ddlTurnos.Items.Clear();
+                    ddlDocentes.Items.Clear();
+                    ddlAnio.Items.Clear();
+                }
             }
             catch (Exception ex)
             {
@@ -80,10 +110,22 @@ namespace Sistema_de_etiquetas.Etiquetas
 
             try
             {
-                ddlDocentes.DataSource = servicio.cargarDocentes(idCarrera, idMateria, turno);
-                ddlDocentes.DataTextField = "Apellido";
-                ddlDocentes.DataValueField = "IdDocente";
-                ddlDocentes.DataBind();
+                if (ddlTurnos.SelectedIndex != 0)
+                {
+                    ddlDocentes.Items.Clear();
+                    ddlDocentes.Items.Add(" ");
+                    ddlDocentes.DataSource = servicio.cargarDocentes(idCarrera, idMateria, turno);
+                    ddlDocentes.DataTextField = "Apellido";
+                    ddlDocentes.DataValueField = "IdDocente";
+                    ddlDocentes.DataBind();
+
+                    ddlAnio.Items.Clear();
+                }
+                else
+                {
+                    ddlDocentes.Items.Clear();
+                    ddlAnio.Items.Clear();
+                }
             }
             catch (Exception ex)
             {
@@ -97,8 +139,17 @@ namespace Sistema_de_etiquetas.Etiquetas
 
             try
             {
-                ddlAnio.DataSource = servicio.cargarAnios(idCarrera, idMateria, turno, idDocente);
-                ddlAnio.DataBind();
+                if (ddlDocentes.SelectedIndex != 0)
+                {
+                    ddlAnio.Items.Clear();
+                    ddlAnio.Items.Add(" ");
+                    ddlAnio.DataSource = servicio.cargarAnios(idCarrera, idMateria, turno, idDocente);
+                    ddlAnio.DataBind();
+                }
+                else
+                {
+                    ddlAnio.Items.Clear();
+                }
             }
             catch (Exception ex)
             {
@@ -123,7 +174,7 @@ namespace Sistema_de_etiquetas.Etiquetas
 
         protected void ddlDocentes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cargarAnios(ddlCarrera.SelectedItem.Value.ToString(), ddlCarrera.SelectedItem.Value.ToString(), ddlTurnos.SelectedItem.Value.ToString(), Convert.ToInt32(ddlDocentes.SelectedItem.Value));
+            cargarAnios(ddlCarrera.SelectedItem.Value.ToString(), ddlMaterias.SelectedItem.Value.ToString(), ddlTurnos.SelectedItem.Value.ToString(), Convert.ToInt32(ddlDocentes.SelectedItem.Value));
         }
 
     }

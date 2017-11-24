@@ -170,14 +170,14 @@ namespace Sistema_de_etiquetas.Etiquetas
 
             try
             {
-                //ESTA CONSULTA TRAE TODOS LOSANIOS QUE CORRESPONDEN A LA CARRERA, MATERIA, TURNO Y DOCENTE QUE SE ENVIAN POR PARAMETRO
+                //ESTA CONSULTA TRAE TODOS LOS ANIOS QUE CORRESPONDEN A LA CARRERA, MATERIA, TURNO Y DOCENTE QUE SE ENVIAN POR PARAMETRO
                 dato.cargarComandoText("SELECT CU.Anio FROM CURSOS CU INNER JOIN CARRERAS C ON CU.CodigoCarrera=C.CodigoCarrera INNER JOIN MATERIAS M ON CU.CodigoMateria=M.CodigoMateria INNER JOIN TURNOS T ON CU.Turno=T.Turno INNER JOIN DOCENTES D ON CU.IdDocente=D.IdDocente INNER JOIN PERSONAS P ON P.NroDoc=D.NroDoc WHERE C.CodigoCarrera='"+idCarrera+"' AND M.CodigoMateria='"+idMateria+"' AND T.Turno='"+turno+"' AND D.IdDocente="+idDocente.ToString());
                 dato.conectarse();
                 dato.ejecutarQuery();
 
                 while (dato.Lector.Read())
                 {
-                    string anio = "";
+                    string anio = " ";
 
                     anio = dato.Lector.GetString(0);
 
