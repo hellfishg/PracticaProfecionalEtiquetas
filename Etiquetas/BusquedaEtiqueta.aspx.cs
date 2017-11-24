@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace Sistema_de_etiquetas.Etiquetas
 {
@@ -177,5 +178,41 @@ namespace Sistema_de_etiquetas.Etiquetas
             cargarAnios(ddlCarrera.SelectedItem.Value.ToString(), ddlMaterias.SelectedItem.Value.ToString(), ddlTurnos.SelectedItem.Value.ToString(), Convert.ToInt32(ddlDocentes.SelectedItem.Value));
         }
 
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (ddlAnio.SelectedIndex != 0)
+            {
+                generarEtiqueta("Carrera: " + ddlCarrera.SelectedItem.Text);
+                generarEtiqueta("Materia: " + ddlMaterias.SelectedItem.Text);
+                generarEtiqueta("Turno: " + ddlTurnos.SelectedItem.Text);
+                generarEtiqueta("Docente: " + ddlDocentes.SelectedItem.Text);
+                generarEtiqueta("Año: " + ddlAnio.SelectedItem.Text);
+            }
+            else
+                Response.Write("<script>window.alert('Debe ingresar todos los datos');</script>");
+        }
+
+        public static void generarEtiqueta(string stMensaje)
+        {
+            StreamWriter swFile = default(StreamWriter);
+            string stFile = null;
+            string stPathEtiqueta = "\\etiqueta.txt";
+
+            try
+            {
+                if (stPathEtiqueta.Length > 0)
+                {
+                    stFile = System.Web.HttpContext.Current.Server.MapPath(".") + stPathEtiqueta;
+                    swFile = new StreamWriter(stFile, true);
+                    swFile.Write(stMensaje + Environment.NewLine);
+                    swFile.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

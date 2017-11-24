@@ -89,7 +89,7 @@
         <tr>
             <td style="width: 80px">&nbsp;</td>
             <td>
-                <asp:Button ID="Button1" runat="server" Text="Imprimir" />
+                <asp:Button ID="Button1" runat="server" Text="Imprimir" OnClick="Button1_Click" />
             </td>
         </tr>
     </table>
